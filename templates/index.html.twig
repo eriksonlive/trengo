@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Hello ExampleController!
+{% endblock %}
+
+{% block body %}
+
+	<h1>Lista de Tickets</h1>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Asunto</th>
+				<th>Estado</th>
+				<th>Fecha de Creación</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for ticket in tickets['data'] %}
+				<tr>
+					<td>{{ ticket.id }}</td>
+					<td>{{ ticket.subject }}</td>
+					<td>{{ ticket.status }}</td>
+					<td>{{ ticket.created_at|date('Y-m-d H:i') }}</td>
+					<td>
+						{# <a href="{{ path('ticket_details', {'ticket_id': ticket.id}) }}" class="btn btn-info btn-sm">Ver</a> #}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5" class="text-center">No hay tickets disponibles.</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}
