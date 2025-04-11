@@ -9,24 +9,26 @@ use Doctrine\ORM\Mapping as ORM;
 class Tickets
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-
-    #[ORM\Column]
-    private ?int $idTickets = null;
 
     #[ORM\Column(length: 255)]
     private ?string $status = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $label_name = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $detenidoEn = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $labelName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $idLabel = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $subject = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $type_contact = null;
+    private ?string $contact = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $category = null;
@@ -43,19 +45,15 @@ class Tickets
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $closedAt = null;
 
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdTickets(): ?int
+    public function setId(int $id): static
     {
-        return $this->idTickets;
-    }
-
-    public function setIdTickets(int $idTickets): static
-    {
-        $this->idTickets = $idTickets;
+        $this->id = $id;
 
         return $this;
     }
@@ -72,14 +70,38 @@ class Tickets
         return $this;
     }
 
-    public function getLabelName(): ?string
+    public function getDetenidoEn(): ?string
     {
-        return $this->label_name;
+        return $this->detenidoEn;
     }
 
-    public function setLabelName(string $label_name): static
+    public function setDetenidoEn(string $detenidoEn): static
     {
-        $this->label_name = $label_name;
+        $this->detenidoEn = $detenidoEn;
+
+        return $this;
+    }
+
+    public function getLabelName(): ?string
+    {
+        return $this->labelName;
+    }
+
+    public function setLabelName(string $labelName): static
+    {
+        $this->labelName = $labelName;
+
+        return $this;
+    }
+
+    public function getIdLabel(): ?int
+    {
+        return $this->idLabel;
+    }
+
+    public function setIdLabel(?int $idLabel): static
+    {
+        $this->idLabel = $idLabel;
 
         return $this;
     }
@@ -98,12 +120,12 @@ class Tickets
 
     public function getTypeContact(): ?string
     {
-        return $this->type_contact;
+        return $this->contact;
     }
 
-    public function setTypeContact(string $type_contact): static
+    public function setTypeContact(string $contact): static
     {
-        $this->type_contact = $type_contact;
+        $this->contact = $contact;
 
         return $this;
     }

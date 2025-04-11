@@ -6,35 +6,245 @@
 
 {% block body %}
 
-	<h1>Lista de Tickets</h1>
+	<div class="m-4 p-4 relative overflow-x-auto shadow-md sm:rounded-lg">
+		<form method="get" action="{{ path('index') }}">
+			<div class="pb-4 bg-white dark:bg-gray-900 flex flex-wrap gap-4 items-end mb-4">
 
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>Asunto</th>
-				<th>Estado</th>
-				<th>Fecha de Creación</th>
-				<th>Acciones</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for ticket in tickets['data'] %}
+				<input type="hidden" name="page" value="1">
+
+				<div class="relative">
+					<label for="id-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ID ticket</label>
+					<input type="text" id="id-input" name="id_ticket" value="{{ filters.id_ticket ?? '' }}" class="block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-40 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+				</div>
+
+				<div class="relative">
+					<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccione un estado</label>
+					<div class="relative w-60">
+						<select id="countries" name="status" class="block py-2 px-3 pr-8 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none">
+							<option value="" selected>Seleccione un estado</option>
+							<option value="OPEN" {{ filters.status == 'OPEN' ? 'selected' : '' }}>Abierto</option>
+							<option value="ASSIGNED" {{ filters.status == 'ASSIGNED' ? 'selected' : '' }}>Asignado</option>
+							<option value="CLOSED" {{ filters.status == 'CLOSED' ? 'selected' : '' }}>Cerrado</option>
+							<option value="INVALID" {{ filters.status == 'INVALID' ? 'selected' : '' }}>Invalido</option>
+						</select>
+						<!-- Ícono personalizado -->
+						<svg class="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+						</svg>
+					</div>
+
+				</div>
+
+				<div class="relative">
+					<label for="date_input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha inicial</label>
+					<div class="relative w-50">
+						<input type="date" id="date-input" name="date_start" value="{{ filters.date_start }}" class="block py-2 pr-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+					</div>
+				</div>
+
+				<div class="relative">
+					<label for="date-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Fecha final</label>
+					<div class="relative w-50">
+						<input type="date" id="date-input" name="date_end" value="{{ filters.date_end }}" class="block py-2 pr-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+					</div>
+				</div>
+
+				<div>
+					<input type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center" value="filtrar"/>
+				</div>
+			</div>
+		</form>
+		<div class="pb-4 bg-white dark:bg-gray-900 flex justify-end">
+			<label for="table-search" class="sr-only">Buscar</label>
+			<div class="relative mt-1">
+				<div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+					<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 20 20">
+						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+					</svg>
+				</div>
+				<input type="text" id="table-search" class="block py-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar">
+			</div>
+		</div>
+		<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
 				<tr>
-					<td>{{ ticket.id }}</td>
-					<td>{{ ticket.subject }}</td>
-					<td>{{ ticket.status }}</td>
-					<td>{{ ticket.created_at|date('Y-m-d H:i') }}</td>
-					<td>
-						{# <a href="{{ path('ticket_details', {'ticket_id': ticket.id}) }}" class="btn btn-info btn-sm">Ver</a> #}
-					</td>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							ID ticket
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Asunto
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Estado
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Detenido en
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Categoria
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Fecha de Creación
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">Acciones</th>
 				</tr>
-			{% else %}
-				<tr>
-					<td colspan="5" class="text-center">No hay tickets disponibles.</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				{% for ticket in tickets %}
+					<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-300">
+						<td class="px-6 py-2">{{ ticket.id }}</td>
+						<td class="px-6 py-2">{{ ticket.subject }}</td>
+						<td class="px-6 py-2">{{ ticket.status }}</td>
+						<td class="px-6 py-2">{{ ticket.detenidoEn }}</td>
+						<td class="px-6 py-2">{{ ticket.category }}</td>
+						<td class="px-6 py-2">{{ ticket.createdAt|date('Y-m-d H:i') }}</td>
+						<td class="px-6 py-2 flex flex-row">
+							<button type="button" class="bg-blue-500 text-blue-100 border border-blue-100 hover:bg-blue-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-blue-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
+								<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+									<path stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
+									<path stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+								</svg>
+
+								<span class="sr-only">Icon description</span>
+							</button>
+							<button type="button" class="bg-amber-500 text-amber-100 border border-amber-100 hover:bg-amber-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-amber-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
+								<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+									<path stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+								</svg>
+								<span class="sr-only">Icon description</span>
+							</button>
+							<button type="button" class="bg-red-500 text-red-100 border border-red-100 hover:bg-red-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
+								<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+									<path stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+								</svg>
+
+								<span class="sr-only">Icon description</span>
+							</button>
+						</td>
+					</tr>
+				{% else %}
+					<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+						<td colspan="5" class="text-center">No hay tickets disponibles.</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
+			<span class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">
+				Mostrando
+				<span class="font-semibold text-gray-900 dark:text-white">
+					{{ offset + 1 }}–{{ min(offset + itemsPerPage, totalCount) }}
+				</span>
+				de
+				<span class="font-semibold text-gray-900 dark:text-white">{{ totalCount }}</span>
+			</span>
+
+			<ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
+				{% if page > 1 %}
+					<li>
+						<a href="{{ path('index', filters|merge({ page: page - 1 })) }}" class="px-3 h-8 flex items-center justify-center text-gray-500 border border-gray-300 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-s-lg">
+							Anterior
+						</a>
+					</li>
+				{% endif %}
+
+				{# Mostrar siempre la primera página #}
+				<li>
+					<a href="{{ path('index', filters|merge({ page: 1 })) }}" class="px-3 h-8 flex items-center justify-center {{ page == 1 ? 'text-blue-600 bg-blue-50 dark:bg-gray-700 dark:text-white' : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' }} border border-gray-300">
+						1
+					</a>
+				</li>
+
+				{# Mostrar "..." si estamos lejos de la primera página #}
+				{% if page > 3 %}
+					<li>
+						<span class="px-3 h-8 flex items-center text-gray-500">...</span>
+					</li>
+				{% endif %}
+
+				{# Páginas cercanas al actual #}
+				{% for i in (page - 1)..(page + 1) %}
+					{% if i > 1 and i < totalPages %}
+						<li>
+							<a href="{{ path('index', filters|merge({ page: i })) }}" class="px-3 h-8 flex items-center justify-center {{ page == i ? 'text-blue-600 bg-blue-50 dark:bg-gray-700 dark:text-white' : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' }} border border-gray-300">
+								{{ i }}
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+
+				{# Mostrar "..." si estamos lejos del final #}
+				{% if page < totalPages - 2 %}
+					<li>
+						<span class="px-3 h-8 flex items-center text-gray-500">...</span>
+					</li>
+				{% endif %}
+
+				{# Mostrar siempre la última página si hay más de una #}
+				{% if totalPages > 1 %}
+					<li>
+						<a href="{{ path('index', filters|merge({ page: totalPages })) }}" class="px-3 h-8 flex items-center justify-center {{ page == totalPages ? 'text-blue-600 bg-blue-50 dark:bg-gray-700 dark:text-white' : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' }} border border-gray-300">
+							{{ totalPages }}
+						</a>
+					</li>
+				{% endif %}
+
+				{% if page < totalPages %}
+					<li>
+						<a href="{{ path('index', filters|merge({ page: page + 1 })) }}" class="px-3 h-8 flex items-center justify-center text-gray-500 border border-gray-300 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-e-lg">
+							Siguiente
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+
+
+		</nav>
+
+
+	</div>
+
 
 {% endblock %}

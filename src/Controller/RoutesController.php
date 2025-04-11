@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Tickets;
+use App\Repository\TicketsRepository;
 use App\Services\TrengoServices;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\Json;
 
 class RoutesController extends AbstractController
 {
@@ -20,36 +22,36 @@ class RoutesController extends AbstractController
     }
 
     #[Route('/', name: 'index')]
-    public function fetchData(Request $request)
+    public function fetchData(Request $request, TicketsRepository $tickets)
     {
-        $ticketId = 834510454; // Reemplaza con un ID válido
-        // Obtener parámetros desde la URL
-        $page = $request->query->get('page', 1); // Valor por defecto: 1
-        $labels = 1645368; // Array de etiquetas
-        $sort = $request->query->get('sort', '-date'); // Valor por defecto: -date
 
-        // Construir los parámetros
-        $queryParams = [
-            'page' => $page,
-            'labels' => $labels,
-            'sort' => $sort,
-        ];
+        $itemsPerPage = 10;
+        $page = max(1, $request->query->getInt('page', 1));
+        $offset = ($page - 1) * $itemsPerPage;
 
-        $data = $this->trengoServices->request('/tickets', $queryParams);
-        // $data = $this->trengoServices->request('/tickets/' . $ticketId . '/messages');
+        dump($request->query->all());
 
-        // echo '<pre>';
-        dump($data);
-        // echo '</pre>';
+        $paginator = $tickets->getTicketsPaginator($offset, $itemsPerPage, $request->query->all());
+
+        $totalCount = count($paginator);
+        $totalPages = (int) ceil($totalCount / $itemsPerPage);
 
         return $this->render('index.html.twig', [
-            'tickets' => $data
+            'tickets' => $paginator,
+            'totalCount' => $totalCount,
+            'totalPages' => $totalPages,
+            'offset' => $offset,
+            'page' => $page,
+            'itemsPerPage' => $itemsPerPage,
+            "filters" => $request->query->all(),
         ]);
     }
 
     #[Route('/tickets', name: 'tickets', methods: ['GET'])]
     public function fetchTickets(Request $request): JsonResponse
     {
+
+        print_r($request->query->all());
 
         // Obtener parámetros desde la URL
         $page = $request->query->get('page', 1); // Valor por defecto: 1
