@@ -1,0 +1,2002 @@
+{
+    "data": [
+      {
+        "id": 3899986537,
+        "ticket_id": 839278382,
+        "type": "OUTBOUND",
+        "body_type": "TEXT",
+        "message": " SGM ¿Qué tan satisfecho estás con la atención que SGM dio a tu caso? 😞 Very dissatisfied 🙁 Dissatisfied 😐 Neutral 🙂 Satisfied 😁 Very satisfied ¿Cuéntanos qué podemos mejorar? @import url(https://fonts.bunny.net/css?family=inter:100,300,400,500,600,700,800); .csat-mail { padding: 90px 223px 60px 90px !important; max-width: 269px !important } .csat-border { width: 140% !important; } .csat-question, .csat-company { width: 140% !important; } .csat-btn-black:hover { transition: all linear .2s; box-shadow: 0 8px 12px rgba(0, 0, 0, 0.12) !important; } .csat-btn-black:active { background: #333335 !important; box-shadow: none !important; } .csat-ratings { display: inline-flex !important; } .csat-rating { margin-right: 14px !important; } @media (max-width: 768px) { .csat-mail { box-shadow: none !important; padding: 0 !important; margin-top: 24px !important; margin-bottom: 90px !important; width: 100% !important; } .csat-ratings { margin-bottom: 24px !important; display: block !important; } .csat-ratings div { display: block !important; margin-left: 0 !important; margin-bottom: 8px !important; } .csat-ratings a { font-size: 32px !important; line-height: 32px !important; display: flex !important; align-items: center !important; text-decoration: none !important; border: 1px solid #C0C0C6 !important; border-radius: 56px !important; padding-left: 55px !important; height: 58px !important; } .csat-rating { margin-right: 0 !important; } .csat-border { margin: 32px 0 !important; } .csat-company { width: 100% !important; font-size: 24px !important; line-height: 28px !important; margin-bottom: 12px !important; max-width: 333px !important; word-wrap: break-word !important; } .csat-question { width: 100% !important;; line-height: 28px !important; word-wrap: break-word !important; } .csat-rating-emoji { display: inline-block !important; font-family: Inter, sans-serif !important; font-weight: 600 !important; font-size: 14px !important; line-height: 14px !important; color: #410008 !important; margin-left: 14px !important; } .csat-border { width: 100% !important; } .csat-btn-black { display: block !important; text-align: center !important; height: 64px !important; line-height: 64px !important; } .csat-powered-by { margin-bottom: 0 !important; } } ",
+        "file_name": null,
+        "file_caption": null,
+        "location_data": null,
+        "created_at": "2025-04-15 23:10:46",
+        "updated_at": "2025-04-15 23:10:49",
+        "user_id": null,
+        "contact": {
+          "id": 458736953,
+          "name": "direccionadministrativa@reqperaips.com",
+          "full_name": "direccionadministrativa@reqperaips.com",
+          "email": "direccionadministrativa@reqperaips.com",
+          "abbr": "d",
+          "color": "#03a9f4",
+          "profile_image": null,
+          "is_phone": false,
+          "phone": null,
+          "formatted_phone": null,
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "identifier": "direccionadministrativa@reqperaips.com",
+          "custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "pivot": null,
+          "formatted_custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "display_name": "direccionadministrativa@reqperaips.com",
+          "is_private": false,
+          "custom_field_values": [
+            {
+              "custom_field_id": 612863,
+              "field_name": "Cliente",
+              "value": "Reqpera"
+            }
+          ]
+        },
+        "agent": null,
+        "attachments": [],
+        "mentions": [],
+        "contacts": [],
+        "meta": null,
+        "parent": null,
+        "reactionSums": [],
+        "is_auto_reply": 1,
+        "delivery": null,
+        "email_message": {
+          "collapsed": true
+        }
+      },
+      {
+        "id": 3899985594,
+        "ticket_id": 839278382,
+        "type": "OUTBOUND",
+        "body_type": "TEXT",
+        "message": " Estimado(a) direccionadministrativa@reqperaips.com Ticket: 839278382 En atención a su solicitud, la mesa de servicio SGM informa que su caso ha sido resuelto y queda cerrado con la siguiente indicación: Les recordamos que el proceso de envío de correo no es automático y que es el usuario quien lo realiza al dar clic en \"ENVIO CORREO\" al momento de la transmisión de la factura electrónica, se evidencia que hoy a las 3:15 p.m. se hizo correctamente ese proceso. Adjunto el correo donde fue dada esas indicaciones. Agradecemos la comunicación y esperamos haber entregado la mejor respuesta a su inquietud. Cordialmente, Nataly Romero Contreras ",
+        "file_name": null,
+        "file_caption": null,
+        "location_data": null,
+        "created_at": "2025-04-15 23:08:12",
+        "updated_at": "2025-04-15 23:08:16",
+        "user_id": 383100,
+        "contact": {
+          "id": 458736953,
+          "name": "direccionadministrativa@reqperaips.com",
+          "full_name": "direccionadministrativa@reqperaips.com",
+          "email": "direccionadministrativa@reqperaips.com",
+          "abbr": "d",
+          "color": "#03a9f4",
+          "profile_image": null,
+          "is_phone": false,
+          "phone": null,
+          "formatted_phone": null,
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "identifier": "direccionadministrativa@reqperaips.com",
+          "custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "pivot": null,
+          "formatted_custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "display_name": "direccionadministrativa@reqperaips.com",
+          "is_private": false,
+          "custom_field_values": [
+            {
+              "custom_field_id": 612863,
+              "field_name": "Cliente",
+              "value": "Reqpera"
+            }
+          ]
+        },
+        "agent": {
+          "id": 383100,
+          "agency_id": 175635,
+          "first_name": "Nataly",
+          "last_name": "Romero Contreras",
+          "name": "Nataly Romero Contreras",
+          "full_name": "Nataly Romero Contreras",
+          "email": "nromero@sgm.com.co",
+          "abbr": "N",
+          "phone": "+573246026389",
+          "color": "#ff9800",
+          "locale_code": "es-ES",
+          "status": "ACTIVE",
+          "text": "Nataly Romero Contreras",
+          "is_online": 0,
+          "user_status": "ONLINE",
+          "chat_status": "1",
+          "voip_status": null,
+          "voip_device": "WEB",
+          "profile_image": "https://s3.eu-central-1.amazonaws.com/trengo/media/user_3e99be43e05442676e5c9dbc1bdb35ac.jpg",
+          "authorization": "OWNER",
+          "role": {
+            "id": 24,
+            "name": "administrator"
+          },
+          "is_primary": 1,
+          "timezone": "America/Bogota",
+          "created_at": "2021-12-10 23:55:20",
+          "two_factor_authentication_enabled": false
+        },
+        "attachments": [
+          {
+            "id": 366328214,
+            "agency_id": 175635,
+            "message_id": 3899985594,
+            "client_name": "image.png",
+            "file_name": "4da4DQdZlbFhYjO6CTGE7k9Aeao8ZtLaMGcOeT6UJJ0vFBbXmIWLETImIiIvsMMJ9b5iWdQm3iy-image.png",
+            "size": null,
+            "mime_type": "image/png",
+            "created_at": "2025-04-15T21:01:28.000000Z",
+            "updated_at": "2025-04-15T21:08:12.000000Z",
+            "full_url": "https://s3.eu-central-1.amazonaws.com/trengo/media/4da4DQdZlbFhYjO6CTGE7k9Aeao8ZtLaMGcOeT6UJJ0vFBbXmIWLETImIiIvsMMJ9b5iWdQm3iy-image.png",
+            "is_image": true,
+            "extension": "PNG"
+          },
+          {
+            "id": 366328454,
+            "agency_id": 175635,
+            "message_id": 3899985594,
+            "client_name": "respuesta-783041512.pdf",
+            "file_name": "lW4oJ6jdU5v4YXlO4IPWGZe1nSF28Fo5dZXruxmiFggw1KORWrg1mXmTDlRPeZhTNV1fG1zubuA-respuesta-783041512.pdf",
+            "size": null,
+            "mime_type": "application/pdf",
+            "created_at": "2025-04-15T21:08:05.000000Z",
+            "updated_at": "2025-04-15T21:08:12.000000Z",
+            "full_url": "https://s3.eu-central-1.amazonaws.com/trengo/media/lW4oJ6jdU5v4YXlO4IPWGZe1nSF28Fo5dZXruxmiFggw1KORWrg1mXmTDlRPeZhTNV1fG1zubuA-respuesta-783041512.pdf",
+            "is_image": false,
+            "extension": "PDF"
+          }
+        ],
+        "mentions": [],
+        "contacts": [
+          {
+            "id": 436053619,
+            "agency_id": 175635,
+            "title": "MR",
+            "first_name": null,
+            "last_name": null,
+            "full_name": "gerencia@reqperaips.com",
+            "street_name": null,
+            "house_no": null,
+            "zip_code": null,
+            "city": null,
+            "whatsapp_phone_id": null,
+            "phone": null,
+            "color": "#00bcd4",
+            "image_path": null,
+            "email": "gerencia@reqperaips.com",
+            "is_synced": 1,
+            "custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "created_at": "2023-07-05T19:19:36.000000Z",
+            "updated_at": "2023-07-05T19:19:36.000000Z",
+            "deleted_at": null,
+            "deleted_by": null,
+            "name": "gerencia@reqperaips.com",
+            "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+            "profile_image": null,
+            "formatted_custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "formatted_phone": null,
+            "abbr": "g",
+            "is_phone": false,
+            "identifier": "gerencia@reqperaips.com",
+            "is_private": false,
+            "pivot": {
+              "message_id": 3899985594,
+              "contact_id": 436053619,
+              "ticket_id": 839278382,
+              "type": "CC",
+              "created_at": "2025-04-15T21:08:12.000000Z",
+              "updated_at": "2025-04-15T21:08:12.000000Z"
+            },
+            "users": [],
+            "custom_fields": [
+              {
+                "id": 612863,
+                "title": "Cliente",
+                "agency_id": 175635,
+                "sort_order": -1,
+                "type": "CONTACT",
+                "created_at": "2023-11-24T22:03:01.000000Z",
+                "updated_at": "2025-03-17T19:13:02.000000Z",
+                "identifier": "cliente",
+                "field_type": "DROPDOWN",
+                "placeholder": "Seleccione cliente",
+                "meta": [
+                  {
+                    "title": "AndresPrada"
+                  },
+                  {
+                    "title": "Aspen"
+                  },
+                  {
+                    "title": "Atmela"
+                  },
+                  {
+                    "title": "Audiomedicpereira"
+                  },
+                  {
+                    "title": "Cajasan"
+                  },
+                  {
+                    "title": "Cardiocenter"
+                  },
+                  {
+                    "title": "CenaSIP"
+                  },
+                  {
+                    "title": "Cendiatra"
+                  },
+                  {
+                    "title": "Colsubsidio"
+                  },
+                  {
+                    "title": "Comfaguajira"
+                  },
+                  {
+                    "title": "Controlar"
+                  },
+                  {
+                    "title": "Consultorios"
+                  },
+                  {
+                    "title": "Clientes retirados"
+                  },
+                  {
+                    "title": "Dr. Gil"
+                  },
+                  {
+                    "title": "Evolucionar"
+                  },
+                  {
+                    "title": "Gemssa"
+                  },
+                  {
+                    "title": "Garciacifuentes"
+                  },
+                  {
+                    "title": "Grupo Synlab"
+                  },
+                  {
+                    "title": "Help"
+                  },
+                  {
+                    "title": "Humanfine"
+                  },
+                  {
+                    "title": "Intersalud"
+                  },
+                  {
+                    "title": "Labintox"
+                  },
+                  {
+                    "title": "Laborpositiva"
+                  },
+                  {
+                    "title": "Lecmac"
+                  },
+                  {
+                    "title": "Lih"
+                  },
+                  {
+                    "title": "LorenaVejarano"
+                  },
+                  {
+                    "title": "Lupatech"
+                  },
+                  {
+                    "title": "Mansarovar"
+                  },
+                  {
+                    "title": "Medilabor"
+                  },
+                  {
+                    "title": "Medilac"
+                  },
+                  {
+                    "title": "Medimovil"
+                  },
+                  {
+                    "title": "Medishi"
+                  },
+                  {
+                    "title": "Megasistencia"
+                  },
+                  {
+                    "title": "Miratusalud"
+                  },
+                  {
+                    "title": "MyM"
+                  },
+                  {
+                    "title": "Naturalcorp"
+                  },
+                  {
+                    "title": "Niehans"
+                  },
+                  {
+                    "title": "Omarrivera"
+                  },
+                  {
+                    "title": "Omnisalud"
+                  },
+                  {
+                    "title": "Otoniel-Koactuar"
+                  },
+                  {
+                    "title": "Otros servicios"
+                  },
+                  {
+                    "title": "Praxis"
+                  },
+                  {
+                    "title": "QuironPrevencion"
+                  },
+                  {
+                    "title": "Reqpera"
+                  },
+                  {
+                    "title": "RVG"
+                  },
+                  {
+                    "title": "Saanu"
+                  },
+                  {
+                    "title": "SaludOcupacionalTotal"
+                  },
+                  {
+                    "title": "SandraZabala"
+                  },
+                  {
+                    "title": "Servimendisst"
+                  },
+                  {
+                    "title": "Serviso"
+                  },
+                  {
+                    "title": "SGM"
+                  },
+                  {
+                    "title": "Selika"
+                  },
+                  {
+                    "title": "Sh1a"
+                  },
+                  {
+                    "title": "Sidel"
+                  },
+                  {
+                    "title": "Sisomed"
+                  },
+                  {
+                    "title": "Soinco"
+                  },
+                  {
+                    "title": "Soulmedical"
+                  },
+                  {
+                    "title": "Tianips"
+                  },
+                  {
+                    "title": "Tusaludlaboral"
+                  },
+                  {
+                    "title": "Unirsalud"
+                  },
+                  {
+                    "title": "Urobosque"
+                  },
+                  {
+                    "title": "Visalrt"
+                  },
+                  {
+                    "title": "VST"
+                  }
+                ],
+                "deleted_at": null,
+                "is_required": false,
+                "pivot": {
+                  "contact_id": 436053619,
+                  "custom_field_id": 612863,
+                  "value": "Reqpera",
+                  "created_at": "2024-07-08T16:15:56.000000Z",
+                  "updated_at": "2024-07-08T16:15:56.000000Z"
+                }
+              }
+            ]
+          },
+          {
+            "id": 436199013,
+            "agency_id": 175635,
+            "title": "MR",
+            "first_name": null,
+            "last_name": null,
+            "full_name": "administrativo@reqperaips.com",
+            "street_name": null,
+            "house_no": null,
+            "zip_code": null,
+            "city": null,
+            "whatsapp_phone_id": null,
+            "phone": null,
+            "color": "#f44336",
+            "image_path": null,
+            "email": "administrativo@reqperaips.com",
+            "is_synced": 1,
+            "custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "created_at": "2023-07-06T22:38:12.000000Z",
+            "updated_at": "2023-07-06T22:38:12.000000Z",
+            "deleted_at": null,
+            "deleted_by": null,
+            "name": "administrativo@reqperaips.com",
+            "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+            "profile_image": null,
+            "formatted_custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "formatted_phone": null,
+            "abbr": "a",
+            "is_phone": false,
+            "identifier": "administrativo@reqperaips.com",
+            "is_private": false,
+            "pivot": {
+              "message_id": 3899985594,
+              "contact_id": 436199013,
+              "ticket_id": 839278382,
+              "type": "CC",
+              "created_at": "2025-04-15T21:08:12.000000Z",
+              "updated_at": "2025-04-15T21:08:12.000000Z"
+            },
+            "users": [],
+            "custom_fields": [
+              {
+                "id": 612863,
+                "title": "Cliente",
+                "agency_id": 175635,
+                "sort_order": -1,
+                "type": "CONTACT",
+                "created_at": "2023-11-24T22:03:01.000000Z",
+                "updated_at": "2025-03-17T19:13:02.000000Z",
+                "identifier": "cliente",
+                "field_type": "DROPDOWN",
+                "placeholder": "Seleccione cliente",
+                "meta": [
+                  {
+                    "title": "AndresPrada"
+                  },
+                  {
+                    "title": "Aspen"
+                  },
+                  {
+                    "title": "Atmela"
+                  },
+                  {
+                    "title": "Audiomedicpereira"
+                  },
+                  {
+                    "title": "Cajasan"
+                  },
+                  {
+                    "title": "Cardiocenter"
+                  },
+                  {
+                    "title": "CenaSIP"
+                  },
+                  {
+                    "title": "Cendiatra"
+                  },
+                  {
+                    "title": "Colsubsidio"
+                  },
+                  {
+                    "title": "Comfaguajira"
+                  },
+                  {
+                    "title": "Controlar"
+                  },
+                  {
+                    "title": "Consultorios"
+                  },
+                  {
+                    "title": "Clientes retirados"
+                  },
+                  {
+                    "title": "Dr. Gil"
+                  },
+                  {
+                    "title": "Evolucionar"
+                  },
+                  {
+                    "title": "Gemssa"
+                  },
+                  {
+                    "title": "Garciacifuentes"
+                  },
+                  {
+                    "title": "Grupo Synlab"
+                  },
+                  {
+                    "title": "Help"
+                  },
+                  {
+                    "title": "Humanfine"
+                  },
+                  {
+                    "title": "Intersalud"
+                  },
+                  {
+                    "title": "Labintox"
+                  },
+                  {
+                    "title": "Laborpositiva"
+                  },
+                  {
+                    "title": "Lecmac"
+                  },
+                  {
+                    "title": "Lih"
+                  },
+                  {
+                    "title": "LorenaVejarano"
+                  },
+                  {
+                    "title": "Lupatech"
+                  },
+                  {
+                    "title": "Mansarovar"
+                  },
+                  {
+                    "title": "Medilabor"
+                  },
+                  {
+                    "title": "Medilac"
+                  },
+                  {
+                    "title": "Medimovil"
+                  },
+                  {
+                    "title": "Medishi"
+                  },
+                  {
+                    "title": "Megasistencia"
+                  },
+                  {
+                    "title": "Miratusalud"
+                  },
+                  {
+                    "title": "MyM"
+                  },
+                  {
+                    "title": "Naturalcorp"
+                  },
+                  {
+                    "title": "Niehans"
+                  },
+                  {
+                    "title": "Omarrivera"
+                  },
+                  {
+                    "title": "Omnisalud"
+                  },
+                  {
+                    "title": "Otoniel-Koactuar"
+                  },
+                  {
+                    "title": "Otros servicios"
+                  },
+                  {
+                    "title": "Praxis"
+                  },
+                  {
+                    "title": "QuironPrevencion"
+                  },
+                  {
+                    "title": "Reqpera"
+                  },
+                  {
+                    "title": "RVG"
+                  },
+                  {
+                    "title": "Saanu"
+                  },
+                  {
+                    "title": "SaludOcupacionalTotal"
+                  },
+                  {
+                    "title": "SandraZabala"
+                  },
+                  {
+                    "title": "Servimendisst"
+                  },
+                  {
+                    "title": "Serviso"
+                  },
+                  {
+                    "title": "SGM"
+                  },
+                  {
+                    "title": "Selika"
+                  },
+                  {
+                    "title": "Sh1a"
+                  },
+                  {
+                    "title": "Sidel"
+                  },
+                  {
+                    "title": "Sisomed"
+                  },
+                  {
+                    "title": "Soinco"
+                  },
+                  {
+                    "title": "Soulmedical"
+                  },
+                  {
+                    "title": "Tianips"
+                  },
+                  {
+                    "title": "Tusaludlaboral"
+                  },
+                  {
+                    "title": "Unirsalud"
+                  },
+                  {
+                    "title": "Urobosque"
+                  },
+                  {
+                    "title": "Visalrt"
+                  },
+                  {
+                    "title": "VST"
+                  }
+                ],
+                "deleted_at": null,
+                "is_required": false,
+                "pivot": {
+                  "contact_id": 436199013,
+                  "custom_field_id": 612863,
+                  "value": "Reqpera",
+                  "created_at": "2024-04-03T19:50:28.000000Z",
+                  "updated_at": "2024-04-03T19:50:28.000000Z"
+                }
+              }
+            ]
+          }
+        ],
+        "meta": null,
+        "parent": null,
+        "reactionSums": [],
+        "is_auto_reply": null,
+        "delivery": null,
+        "email_message": {
+          "id": 1122985283,
+          "plain": null,
+          "html": "<span class=\"caret-position\"></span><p><span style=\"color: rgb(17, 58, 99);\">Estimado(a)</span></p><p><span style=\"color: rgb(17, 58, 99);\">direccionadministrativa@reqperaips.com</span></p><p><span style=\"color: rgb(17, 58, 99);\">Ticket: 839278382</span></p><p><span style=\"color: rgb(17, 58, 99);\">En atención a su solicitud, la mesa de servicio <strong>SGM</strong> informa que su caso ha sido resuelto y queda <strong>cerrado</strong> con la siguiente indicación:</span></p><p><span style=\"color: rgb(17, 58, 99);\">Les recordamos que el proceso de envío de correo no es automático y que es el usuario quien lo realiza al dar clic en \"ENVIO CORREO\" al momento de la transmisión de la factura electrónica, se evidencia que hoy a las 3:15 p.m. se hizo correctamente ese proceso.</span></p><p><span style=\"color: rgb(17, 58, 99);\"><img src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/inline_image_175635_BB1Y9a8VRhS8CEXUB69GsUtUjyVEAPnadxEextEy_1744750887849.1744750887849.png\" style=\"width: 800px; display: block; vertical-align: top; margin: 5px auto; text-align: center;\"></span><br></p><p><span style=\"color: rgb(17, 58, 99);\">Adjunto el correo donde fue dada esas indicaciones.</span></p><p><span style=\"color: rgb(17, 58, 99);\">Agradecemos la comunicación y esperamos haber entregado la mejor respuesta a su inquietud.</span></p><p><span style=\"color: rgb(17, 58, 99);\">Cordialmente,</span></p><p><span style=\"color: rgb(17, 58, 99);\">Nataly Romero Contreras</span></p><br>",
+          "to": null,
+          "cc": "",
+          "from": null,
+          "subject": "RE: APARECE ERROR EN APLICATIVO DE RADICACION - POR NO RADICADA LA FACTURA ELECTRONICA",
+          "message_id": 3899985594,
+          "created_at": "2025-04-15T21:08:12.000000Z",
+          "updated_at": "2025-04-15T21:08:18.000000Z",
+          "message_identifier": "<CA+WJpfspJq_NRFiVhieB4v+FDeX+1H+bEyC=sdBY=MrNpxY-5w@mail.gmail.com>",
+          "collapsed": false
+        }
+      },
+      {
+        "id": 3899953980,
+        "ticket_id": 839278382,
+        "type": "INBOUND",
+        "body_type": "TEXT",
+        "message": "Buenas Tardes Nataly Agradecemos su amable colaboracion con esta solicitud, debido a que al momento no se ha podido resolver el in conveniente y dichas facturas no han podido ser radicadas ante nuestro cliente. Agradecemos su atención y quedamos atentos a sus comentarios. Cordialmente, Wendy RamirezAnalista Técnica Tel: 6415967 - 3016471946Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505REQPERA IPS SAS   De: direccionadministrativa@reqperaips.com &lt;direccionadministrativa@reqperaips.com&gt; Enviado el: lunes, 14 de abril de 2025 04:06 a. m.Para: 'Nataly | SGM TECNOLOGIA EN INTERNET S.A.S.' &lt;soporte@sgm.com.co&gt;CC: gerencia@reqperaips.com; administrativo@reqperaips.comAsunto: APARECE ERROR EN APLICATIVO DE RADICACION - POR NO RADICADA LA FACTURA ELECTRONICAImportancia: Alta Buenas tardes Nathaly,La presente es para solicitar de manera atenta la verificación del aplicativo SGM y de PLATAFORMA FACTURACION HKA, ya que hemos evidenciado que NO SE ESTAN ENVIANDO las facturas electrónicas a los correos corporativos de algunos cliente, por ejemplo caso que adjunto pantallazo abajo.  En la plataforma de radicación de AXA Colpatria, cuando cargamos soportes documentales, al final del proceso&#8230;presenta el siguiente error: &#8220;Estado cargue: Rechazado: Factura sin facturaciónelectrónica radicada&#8221;, revisé en plataforma FACTURACION HKA y se observa que la factura FERQ338 ya fue enviada al correo correspondiente del cliente. Agradezco su apoyo, quedamos atentos.  Cordialmente, Gretty TarazonaAdministracióndireccionadministrativa@reqperaips.comTel: 6415967 - 3143015238Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505 BogotáREQPERA IPS S.A.S.",
+        "file_name": null,
+        "file_caption": null,
+        "location_data": null,
+        "created_at": "2025-04-15 21:58:45",
+        "updated_at": "2025-04-15 22:09:56",
+        "user_id": 383100,
+        "contact": {
+          "id": 436199013,
+          "name": "administrativo@reqperaips.com",
+          "full_name": "administrativo@reqperaips.com",
+          "email": "administrativo@reqperaips.com",
+          "abbr": "a",
+          "color": "#f44336",
+          "profile_image": null,
+          "is_phone": false,
+          "phone": null,
+          "formatted_phone": null,
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "identifier": "administrativo@reqperaips.com",
+          "custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "pivot": null,
+          "formatted_custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "display_name": "administrativo@reqperaips.com",
+          "is_private": false,
+          "custom_field_values": [
+            {
+              "custom_field_id": 612863,
+              "field_name": "Cliente",
+              "value": "Reqpera"
+            }
+          ]
+        },
+        "agent": {
+          "id": 383100,
+          "agency_id": 175635,
+          "first_name": "Nataly",
+          "last_name": "Romero Contreras",
+          "name": "Nataly Romero Contreras",
+          "full_name": "Nataly Romero Contreras",
+          "email": "nromero@sgm.com.co",
+          "abbr": "N",
+          "phone": "+573246026389",
+          "color": "#ff9800",
+          "locale_code": "es-ES",
+          "status": "ACTIVE",
+          "text": "Nataly Romero Contreras",
+          "is_online": 0,
+          "user_status": "ONLINE",
+          "chat_status": "1",
+          "voip_status": null,
+          "voip_device": "WEB",
+          "profile_image": "https://s3.eu-central-1.amazonaws.com/trengo/media/user_3e99be43e05442676e5c9dbc1bdb35ac.jpg",
+          "authorization": "OWNER",
+          "role": {
+            "id": 24,
+            "name": "administrator"
+          },
+          "is_primary": 1,
+          "timezone": "America/Bogota",
+          "created_at": "2021-12-10 23:55:20",
+          "two_factor_authentication_enabled": false
+        },
+        "attachments": [],
+        "mentions": [],
+        "contacts": [
+          {
+            "id": 436053619,
+            "agency_id": 175635,
+            "title": "MR",
+            "first_name": null,
+            "last_name": null,
+            "full_name": "gerencia@reqperaips.com",
+            "street_name": null,
+            "house_no": null,
+            "zip_code": null,
+            "city": null,
+            "whatsapp_phone_id": null,
+            "phone": null,
+            "color": "#00bcd4",
+            "image_path": null,
+            "email": "gerencia@reqperaips.com",
+            "is_synced": 1,
+            "custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "created_at": "2023-07-05T19:19:36.000000Z",
+            "updated_at": "2023-07-05T19:19:36.000000Z",
+            "deleted_at": null,
+            "deleted_by": null,
+            "name": "gerencia@reqperaips.com",
+            "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+            "profile_image": null,
+            "formatted_custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "formatted_phone": null,
+            "abbr": "g",
+            "is_phone": false,
+            "identifier": "gerencia@reqperaips.com",
+            "is_private": false,
+            "pivot": {
+              "message_id": 3899953980,
+              "contact_id": 436053619,
+              "ticket_id": 839278382,
+              "type": "CC",
+              "created_at": "2025-04-15T19:58:46.000000Z",
+              "updated_at": "2025-04-15T19:58:46.000000Z"
+            },
+            "users": [],
+            "custom_fields": [
+              {
+                "id": 612863,
+                "title": "Cliente",
+                "agency_id": 175635,
+                "sort_order": -1,
+                "type": "CONTACT",
+                "created_at": "2023-11-24T22:03:01.000000Z",
+                "updated_at": "2025-03-17T19:13:02.000000Z",
+                "identifier": "cliente",
+                "field_type": "DROPDOWN",
+                "placeholder": "Seleccione cliente",
+                "meta": [
+                  {
+                    "title": "AndresPrada"
+                  },
+                  {
+                    "title": "Aspen"
+                  },
+                  {
+                    "title": "Atmela"
+                  },
+                  {
+                    "title": "Audiomedicpereira"
+                  },
+                  {
+                    "title": "Cajasan"
+                  },
+                  {
+                    "title": "Cardiocenter"
+                  },
+                  {
+                    "title": "CenaSIP"
+                  },
+                  {
+                    "title": "Cendiatra"
+                  },
+                  {
+                    "title": "Colsubsidio"
+                  },
+                  {
+                    "title": "Comfaguajira"
+                  },
+                  {
+                    "title": "Controlar"
+                  },
+                  {
+                    "title": "Consultorios"
+                  },
+                  {
+                    "title": "Clientes retirados"
+                  },
+                  {
+                    "title": "Dr. Gil"
+                  },
+                  {
+                    "title": "Evolucionar"
+                  },
+                  {
+                    "title": "Gemssa"
+                  },
+                  {
+                    "title": "Garciacifuentes"
+                  },
+                  {
+                    "title": "Grupo Synlab"
+                  },
+                  {
+                    "title": "Help"
+                  },
+                  {
+                    "title": "Humanfine"
+                  },
+                  {
+                    "title": "Intersalud"
+                  },
+                  {
+                    "title": "Labintox"
+                  },
+                  {
+                    "title": "Laborpositiva"
+                  },
+                  {
+                    "title": "Lecmac"
+                  },
+                  {
+                    "title": "Lih"
+                  },
+                  {
+                    "title": "LorenaVejarano"
+                  },
+                  {
+                    "title": "Lupatech"
+                  },
+                  {
+                    "title": "Mansarovar"
+                  },
+                  {
+                    "title": "Medilabor"
+                  },
+                  {
+                    "title": "Medilac"
+                  },
+                  {
+                    "title": "Medimovil"
+                  },
+                  {
+                    "title": "Medishi"
+                  },
+                  {
+                    "title": "Megasistencia"
+                  },
+                  {
+                    "title": "Miratusalud"
+                  },
+                  {
+                    "title": "MyM"
+                  },
+                  {
+                    "title": "Naturalcorp"
+                  },
+                  {
+                    "title": "Niehans"
+                  },
+                  {
+                    "title": "Omarrivera"
+                  },
+                  {
+                    "title": "Omnisalud"
+                  },
+                  {
+                    "title": "Otoniel-Koactuar"
+                  },
+                  {
+                    "title": "Otros servicios"
+                  },
+                  {
+                    "title": "Praxis"
+                  },
+                  {
+                    "title": "QuironPrevencion"
+                  },
+                  {
+                    "title": "Reqpera"
+                  },
+                  {
+                    "title": "RVG"
+                  },
+                  {
+                    "title": "Saanu"
+                  },
+                  {
+                    "title": "SaludOcupacionalTotal"
+                  },
+                  {
+                    "title": "SandraZabala"
+                  },
+                  {
+                    "title": "Servimendisst"
+                  },
+                  {
+                    "title": "Serviso"
+                  },
+                  {
+                    "title": "SGM"
+                  },
+                  {
+                    "title": "Selika"
+                  },
+                  {
+                    "title": "Sh1a"
+                  },
+                  {
+                    "title": "Sidel"
+                  },
+                  {
+                    "title": "Sisomed"
+                  },
+                  {
+                    "title": "Soinco"
+                  },
+                  {
+                    "title": "Soulmedical"
+                  },
+                  {
+                    "title": "Tianips"
+                  },
+                  {
+                    "title": "Tusaludlaboral"
+                  },
+                  {
+                    "title": "Unirsalud"
+                  },
+                  {
+                    "title": "Urobosque"
+                  },
+                  {
+                    "title": "Visalrt"
+                  },
+                  {
+                    "title": "VST"
+                  }
+                ],
+                "deleted_at": null,
+                "is_required": false,
+                "pivot": {
+                  "contact_id": 436053619,
+                  "custom_field_id": 612863,
+                  "value": "Reqpera",
+                  "created_at": "2024-07-08T16:15:56.000000Z",
+                  "updated_at": "2024-07-08T16:15:56.000000Z"
+                }
+              }
+            ]
+          },
+          {
+            "id": 458736953,
+            "agency_id": 175635,
+            "title": "MR",
+            "first_name": null,
+            "last_name": null,
+            "full_name": "direccionadministrativa@reqperaips.com",
+            "street_name": null,
+            "house_no": null,
+            "zip_code": null,
+            "city": null,
+            "whatsapp_phone_id": null,
+            "phone": null,
+            "color": "#03a9f4",
+            "image_path": null,
+            "email": "direccionadministrativa@reqperaips.com",
+            "is_synced": 1,
+            "custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "created_at": "2023-12-19T00:01:58.000000Z",
+            "updated_at": "2023-12-19T00:01:58.000000Z",
+            "deleted_at": null,
+            "deleted_by": null,
+            "name": "direccionadministrativa@reqperaips.com",
+            "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+            "profile_image": null,
+            "formatted_custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "formatted_phone": null,
+            "abbr": "d",
+            "is_phone": false,
+            "identifier": "direccionadministrativa@reqperaips.com",
+            "is_private": false,
+            "pivot": {
+              "message_id": 3899953980,
+              "contact_id": 458736953,
+              "ticket_id": 839278382,
+              "type": "RECIPIENT",
+              "created_at": "2025-04-15T19:58:46.000000Z",
+              "updated_at": "2025-04-15T19:58:46.000000Z"
+            },
+            "users": [],
+            "custom_fields": [
+              {
+                "id": 612863,
+                "title": "Cliente",
+                "agency_id": 175635,
+                "sort_order": -1,
+                "type": "CONTACT",
+                "created_at": "2023-11-24T22:03:01.000000Z",
+                "updated_at": "2025-03-17T19:13:02.000000Z",
+                "identifier": "cliente",
+                "field_type": "DROPDOWN",
+                "placeholder": "Seleccione cliente",
+                "meta": [
+                  {
+                    "title": "AndresPrada"
+                  },
+                  {
+                    "title": "Aspen"
+                  },
+                  {
+                    "title": "Atmela"
+                  },
+                  {
+                    "title": "Audiomedicpereira"
+                  },
+                  {
+                    "title": "Cajasan"
+                  },
+                  {
+                    "title": "Cardiocenter"
+                  },
+                  {
+                    "title": "CenaSIP"
+                  },
+                  {
+                    "title": "Cendiatra"
+                  },
+                  {
+                    "title": "Colsubsidio"
+                  },
+                  {
+                    "title": "Comfaguajira"
+                  },
+                  {
+                    "title": "Controlar"
+                  },
+                  {
+                    "title": "Consultorios"
+                  },
+                  {
+                    "title": "Clientes retirados"
+                  },
+                  {
+                    "title": "Dr. Gil"
+                  },
+                  {
+                    "title": "Evolucionar"
+                  },
+                  {
+                    "title": "Gemssa"
+                  },
+                  {
+                    "title": "Garciacifuentes"
+                  },
+                  {
+                    "title": "Grupo Synlab"
+                  },
+                  {
+                    "title": "Help"
+                  },
+                  {
+                    "title": "Humanfine"
+                  },
+                  {
+                    "title": "Intersalud"
+                  },
+                  {
+                    "title": "Labintox"
+                  },
+                  {
+                    "title": "Laborpositiva"
+                  },
+                  {
+                    "title": "Lecmac"
+                  },
+                  {
+                    "title": "Lih"
+                  },
+                  {
+                    "title": "LorenaVejarano"
+                  },
+                  {
+                    "title": "Lupatech"
+                  },
+                  {
+                    "title": "Mansarovar"
+                  },
+                  {
+                    "title": "Medilabor"
+                  },
+                  {
+                    "title": "Medilac"
+                  },
+                  {
+                    "title": "Medimovil"
+                  },
+                  {
+                    "title": "Medishi"
+                  },
+                  {
+                    "title": "Megasistencia"
+                  },
+                  {
+                    "title": "Miratusalud"
+                  },
+                  {
+                    "title": "MyM"
+                  },
+                  {
+                    "title": "Naturalcorp"
+                  },
+                  {
+                    "title": "Niehans"
+                  },
+                  {
+                    "title": "Omarrivera"
+                  },
+                  {
+                    "title": "Omnisalud"
+                  },
+                  {
+                    "title": "Otoniel-Koactuar"
+                  },
+                  {
+                    "title": "Otros servicios"
+                  },
+                  {
+                    "title": "Praxis"
+                  },
+                  {
+                    "title": "QuironPrevencion"
+                  },
+                  {
+                    "title": "Reqpera"
+                  },
+                  {
+                    "title": "RVG"
+                  },
+                  {
+                    "title": "Saanu"
+                  },
+                  {
+                    "title": "SaludOcupacionalTotal"
+                  },
+                  {
+                    "title": "SandraZabala"
+                  },
+                  {
+                    "title": "Servimendisst"
+                  },
+                  {
+                    "title": "Serviso"
+                  },
+                  {
+                    "title": "SGM"
+                  },
+                  {
+                    "title": "Selika"
+                  },
+                  {
+                    "title": "Sh1a"
+                  },
+                  {
+                    "title": "Sidel"
+                  },
+                  {
+                    "title": "Sisomed"
+                  },
+                  {
+                    "title": "Soinco"
+                  },
+                  {
+                    "title": "Soulmedical"
+                  },
+                  {
+                    "title": "Tianips"
+                  },
+                  {
+                    "title": "Tusaludlaboral"
+                  },
+                  {
+                    "title": "Unirsalud"
+                  },
+                  {
+                    "title": "Urobosque"
+                  },
+                  {
+                    "title": "Visalrt"
+                  },
+                  {
+                    "title": "VST"
+                  }
+                ],
+                "deleted_at": null,
+                "is_required": false,
+                "pivot": {
+                  "contact_id": 458736953,
+                  "custom_field_id": 612863,
+                  "value": "Reqpera",
+                  "created_at": "2024-11-22T18:08:47.000000Z",
+                  "updated_at": "2024-11-22T18:08:47.000000Z"
+                }
+              }
+            ]
+          }
+        ],
+        "meta": null,
+        "parent": null,
+        "reactionSums": [],
+        "is_auto_reply": null,
+        "delivery": null,
+        "email_message": {
+          "collapsed": true
+        }
+      },
+      {
+        "id": 3898230384,
+        "ticket_id": 839278382,
+        "type": "OUTBOUND",
+        "body_type": "TEXT",
+        "message": "Gracias por tu mensaje. En este momento no podemos responder. Su caso será atendido en nuestro horario de atención de Lunes a viernes de 7:00 a.m. a 6:00 p.m. y sábados de 7:00 a.m. a 12:00 m. de acuerdo con lo ANS establecidos. Solo para casos de no acceso a la aplicación llamar a 3246026389 o 3125865907. Muchas gracias.",
+        "file_name": null,
+        "file_caption": null,
+        "location_data": null,
+        "created_at": "2025-04-14 11:06:48",
+        "updated_at": "2025-04-14 11:06:49",
+        "user_id": null,
+        "contact": {
+          "id": 458736953,
+          "name": "direccionadministrativa@reqperaips.com",
+          "full_name": "direccionadministrativa@reqperaips.com",
+          "email": "direccionadministrativa@reqperaips.com",
+          "abbr": "d",
+          "color": "#03a9f4",
+          "profile_image": null,
+          "is_phone": false,
+          "phone": null,
+          "formatted_phone": null,
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "identifier": "direccionadministrativa@reqperaips.com",
+          "custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "pivot": null,
+          "formatted_custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "display_name": "direccionadministrativa@reqperaips.com",
+          "is_private": false,
+          "custom_field_values": [
+            {
+              "custom_field_id": 612863,
+              "field_name": "Cliente",
+              "value": "Reqpera"
+            }
+          ]
+        },
+        "agent": null,
+        "attachments": [],
+        "mentions": [],
+        "contacts": [],
+        "meta": null,
+        "parent": null,
+        "reactionSums": [],
+        "is_auto_reply": 1,
+        "delivery": null,
+        "email_message": {
+          "collapsed": true
+        }
+      },
+      {
+        "id": 3898230263,
+        "ticket_id": 839278382,
+        "type": "OUTBOUND",
+        "body_type": "TEXT",
+        "message": " Estimado direccionadministrativa@reqperaips.com,  La mesa de servicio SGM confirma la recepción de su solicitud cuyo ticket asignado es el siguiente: 839278382. El caso será analizado y procesado dentro de los tiempos establecidos en los ANS, conocemos la importancia de su requerimiento y trabajarémos para resolverlo.     PRIORIDAD    DESCRIPCIÓN    TIEMPO DE DIAGNÓSTICO    TIEMPO DE SOLUCIÓN   (Hrs Hábiles)     Alta   -La aplicación no funciona, se encuentra deshabilitada o no responde.   -Facturación crédito.  -Cambio de contraseñas de las cuentas de correo de notificaciones.    30 minutos   4 horas    Media   La aplicación está funcionando, pero algunos de los componentes menores presentan un funcionamiento anormal.   8 horas   24 horas    Baja   La aplicación presenta anomalías que no impactan el servicio.   12 horas   48 horas    Planeado / Mantenimiento   Ajustes de reportes ya existentes o modificación de plantillas, capacitaciones o requerimientos nuevos que puedan generar o no control de cambios.   24 horas   Fecha establecida.     Agradecemos la atención.   Cordial saludo,  Mesa de servicio   SGM Tecnología en Internet ",
+        "file_name": null,
+        "file_caption": null,
+        "location_data": null,
+        "created_at": "2025-04-14 11:06:43",
+        "updated_at": "2025-04-15 22:09:56",
+        "user_id": null,
+        "contact": {
+          "id": 458736953,
+          "name": "direccionadministrativa@reqperaips.com",
+          "full_name": "direccionadministrativa@reqperaips.com",
+          "email": "direccionadministrativa@reqperaips.com",
+          "abbr": "d",
+          "color": "#03a9f4",
+          "profile_image": null,
+          "is_phone": false,
+          "phone": null,
+          "formatted_phone": null,
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "identifier": "direccionadministrativa@reqperaips.com",
+          "custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "pivot": null,
+          "formatted_custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "display_name": "direccionadministrativa@reqperaips.com",
+          "is_private": false,
+          "custom_field_values": [
+            {
+              "custom_field_id": 612863,
+              "field_name": "Cliente",
+              "value": "Reqpera"
+            }
+          ]
+        },
+        "agent": null,
+        "attachments": [],
+        "mentions": [],
+        "contacts": [],
+        "meta": null,
+        "parent": null,
+        "reactionSums": [],
+        "is_auto_reply": 1,
+        "delivery": null,
+        "email_message": {
+          "collapsed": true
+        }
+      },
+      {
+        "id": 3898230259,
+        "ticket_id": 839278382,
+        "type": "INBOUND",
+        "body_type": "TEXT",
+        "message": "Buenas tardes Nathaly,La presente es para solicitar de manera atenta la verificación del aplicativo SGM y de PLATAFORMA FACTURACION HKA, ya que hemos evidenciado que NO SE ESTAN ENVIANDO las facturas electrónicas a los correos corporativos de algunos cliente, por ejemplo caso que adjunto pantallazo abajo.  En la plataforma de radicación de AXA Colpatria, cuando cargamos soportes documentales, al final del proceso&#8230;presenta el siguiente error: &#8220;Estado cargue: Rechazado: Factura sin facturaciónelectrónica radicada&#8221;, revisé en plataforma FACTURACION HKA y se observa que la factura FERQ338 ya fue enviada al correo correspondiente del cliente. Agradezco su apoyo, quedamos atentos.  Cordialmente, Gretty TarazonaAdministracióndireccionadministrativa@reqperaips.comTel: 6415967 - 3143015238Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505 BogotáREQPERA IPS S.A.S.",
+        "file_name": null,
+        "file_caption": null,
+        "location_data": null,
+        "created_at": "2025-04-14 11:06:42",
+        "updated_at": "2025-04-15 22:09:56",
+        "user_id": null,
+        "contact": {
+          "id": 458736953,
+          "name": "direccionadministrativa@reqperaips.com",
+          "full_name": "direccionadministrativa@reqperaips.com",
+          "email": "direccionadministrativa@reqperaips.com",
+          "abbr": "d",
+          "color": "#03a9f4",
+          "profile_image": null,
+          "is_phone": false,
+          "phone": null,
+          "formatted_phone": null,
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "identifier": "direccionadministrativa@reqperaips.com",
+          "custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "pivot": null,
+          "formatted_custom_field_data": {
+            "Cliente": "Reqpera"
+          },
+          "display_name": "direccionadministrativa@reqperaips.com",
+          "is_private": false,
+          "custom_field_values": [
+            {
+              "custom_field_id": 612863,
+              "field_name": "Cliente",
+              "value": "Reqpera"
+            }
+          ]
+        },
+        "agent": null,
+        "attachments": [],
+        "mentions": [],
+        "contacts": [
+          {
+            "id": 436053619,
+            "agency_id": 175635,
+            "title": "MR",
+            "first_name": null,
+            "last_name": null,
+            "full_name": "gerencia@reqperaips.com",
+            "street_name": null,
+            "house_no": null,
+            "zip_code": null,
+            "city": null,
+            "whatsapp_phone_id": null,
+            "phone": null,
+            "color": "#00bcd4",
+            "image_path": null,
+            "email": "gerencia@reqperaips.com",
+            "is_synced": 1,
+            "custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "created_at": "2023-07-05T19:19:36.000000Z",
+            "updated_at": "2023-07-05T19:19:36.000000Z",
+            "deleted_at": null,
+            "deleted_by": null,
+            "name": "gerencia@reqperaips.com",
+            "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+            "profile_image": null,
+            "formatted_custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "formatted_phone": null,
+            "abbr": "g",
+            "is_phone": false,
+            "identifier": "gerencia@reqperaips.com",
+            "is_private": false,
+            "pivot": {
+              "message_id": 3898230259,
+              "contact_id": 436053619,
+              "ticket_id": 839278382,
+              "type": "CC",
+              "created_at": "2025-04-14T09:06:42.000000Z",
+              "updated_at": "2025-04-14T09:06:42.000000Z"
+            },
+            "users": [],
+            "custom_fields": [
+              {
+                "id": 612863,
+                "title": "Cliente",
+                "agency_id": 175635,
+                "sort_order": -1,
+                "type": "CONTACT",
+                "created_at": "2023-11-24T22:03:01.000000Z",
+                "updated_at": "2025-03-17T19:13:02.000000Z",
+                "identifier": "cliente",
+                "field_type": "DROPDOWN",
+                "placeholder": "Seleccione cliente",
+                "meta": [
+                  {
+                    "title": "AndresPrada"
+                  },
+                  {
+                    "title": "Aspen"
+                  },
+                  {
+                    "title": "Atmela"
+                  },
+                  {
+                    "title": "Audiomedicpereira"
+                  },
+                  {
+                    "title": "Cajasan"
+                  },
+                  {
+                    "title": "Cardiocenter"
+                  },
+                  {
+                    "title": "CenaSIP"
+                  },
+                  {
+                    "title": "Cendiatra"
+                  },
+                  {
+                    "title": "Colsubsidio"
+                  },
+                  {
+                    "title": "Comfaguajira"
+                  },
+                  {
+                    "title": "Controlar"
+                  },
+                  {
+                    "title": "Consultorios"
+                  },
+                  {
+                    "title": "Clientes retirados"
+                  },
+                  {
+                    "title": "Dr. Gil"
+                  },
+                  {
+                    "title": "Evolucionar"
+                  },
+                  {
+                    "title": "Gemssa"
+                  },
+                  {
+                    "title": "Garciacifuentes"
+                  },
+                  {
+                    "title": "Grupo Synlab"
+                  },
+                  {
+                    "title": "Help"
+                  },
+                  {
+                    "title": "Humanfine"
+                  },
+                  {
+                    "title": "Intersalud"
+                  },
+                  {
+                    "title": "Labintox"
+                  },
+                  {
+                    "title": "Laborpositiva"
+                  },
+                  {
+                    "title": "Lecmac"
+                  },
+                  {
+                    "title": "Lih"
+                  },
+                  {
+                    "title": "LorenaVejarano"
+                  },
+                  {
+                    "title": "Lupatech"
+                  },
+                  {
+                    "title": "Mansarovar"
+                  },
+                  {
+                    "title": "Medilabor"
+                  },
+                  {
+                    "title": "Medilac"
+                  },
+                  {
+                    "title": "Medimovil"
+                  },
+                  {
+                    "title": "Medishi"
+                  },
+                  {
+                    "title": "Megasistencia"
+                  },
+                  {
+                    "title": "Miratusalud"
+                  },
+                  {
+                    "title": "MyM"
+                  },
+                  {
+                    "title": "Naturalcorp"
+                  },
+                  {
+                    "title": "Niehans"
+                  },
+                  {
+                    "title": "Omarrivera"
+                  },
+                  {
+                    "title": "Omnisalud"
+                  },
+                  {
+                    "title": "Otoniel-Koactuar"
+                  },
+                  {
+                    "title": "Otros servicios"
+                  },
+                  {
+                    "title": "Praxis"
+                  },
+                  {
+                    "title": "QuironPrevencion"
+                  },
+                  {
+                    "title": "Reqpera"
+                  },
+                  {
+                    "title": "RVG"
+                  },
+                  {
+                    "title": "Saanu"
+                  },
+                  {
+                    "title": "SaludOcupacionalTotal"
+                  },
+                  {
+                    "title": "SandraZabala"
+                  },
+                  {
+                    "title": "Servimendisst"
+                  },
+                  {
+                    "title": "Serviso"
+                  },
+                  {
+                    "title": "SGM"
+                  },
+                  {
+                    "title": "Selika"
+                  },
+                  {
+                    "title": "Sh1a"
+                  },
+                  {
+                    "title": "Sidel"
+                  },
+                  {
+                    "title": "Sisomed"
+                  },
+                  {
+                    "title": "Soinco"
+                  },
+                  {
+                    "title": "Soulmedical"
+                  },
+                  {
+                    "title": "Tianips"
+                  },
+                  {
+                    "title": "Tusaludlaboral"
+                  },
+                  {
+                    "title": "Unirsalud"
+                  },
+                  {
+                    "title": "Urobosque"
+                  },
+                  {
+                    "title": "Visalrt"
+                  },
+                  {
+                    "title": "VST"
+                  }
+                ],
+                "deleted_at": null,
+                "is_required": false,
+                "pivot": {
+                  "contact_id": 436053619,
+                  "custom_field_id": 612863,
+                  "value": "Reqpera",
+                  "created_at": "2024-07-08T16:15:56.000000Z",
+                  "updated_at": "2024-07-08T16:15:56.000000Z"
+                }
+              }
+            ]
+          },
+          {
+            "id": 436199013,
+            "agency_id": 175635,
+            "title": "MR",
+            "first_name": null,
+            "last_name": null,
+            "full_name": "administrativo@reqperaips.com",
+            "street_name": null,
+            "house_no": null,
+            "zip_code": null,
+            "city": null,
+            "whatsapp_phone_id": null,
+            "phone": null,
+            "color": "#f44336",
+            "image_path": null,
+            "email": "administrativo@reqperaips.com",
+            "is_synced": 1,
+            "custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "created_at": "2023-07-06T22:38:12.000000Z",
+            "updated_at": "2023-07-06T22:38:12.000000Z",
+            "deleted_at": null,
+            "deleted_by": null,
+            "name": "administrativo@reqperaips.com",
+            "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+            "profile_image": null,
+            "formatted_custom_field_data": {
+              "Cliente": "Reqpera"
+            },
+            "formatted_phone": null,
+            "abbr": "a",
+            "is_phone": false,
+            "identifier": "administrativo@reqperaips.com",
+            "is_private": false,
+            "pivot": {
+              "message_id": 3898230259,
+              "contact_id": 436199013,
+              "ticket_id": 839278382,
+              "type": "CC",
+              "created_at": "2025-04-14T09:06:42.000000Z",
+              "updated_at": "2025-04-14T09:06:42.000000Z"
+            },
+            "users": [],
+            "custom_fields": [
+              {
+                "id": 612863,
+                "title": "Cliente",
+                "agency_id": 175635,
+                "sort_order": -1,
+                "type": "CONTACT",
+                "created_at": "2023-11-24T22:03:01.000000Z",
+                "updated_at": "2025-03-17T19:13:02.000000Z",
+                "identifier": "cliente",
+                "field_type": "DROPDOWN",
+                "placeholder": "Seleccione cliente",
+                "meta": [
+                  {
+                    "title": "AndresPrada"
+                  },
+                  {
+                    "title": "Aspen"
+                  },
+                  {
+                    "title": "Atmela"
+                  },
+                  {
+                    "title": "Audiomedicpereira"
+                  },
+                  {
+                    "title": "Cajasan"
+                  },
+                  {
+                    "title": "Cardiocenter"
+                  },
+                  {
+                    "title": "CenaSIP"
+                  },
+                  {
+                    "title": "Cendiatra"
+                  },
+                  {
+                    "title": "Colsubsidio"
+                  },
+                  {
+                    "title": "Comfaguajira"
+                  },
+                  {
+                    "title": "Controlar"
+                  },
+                  {
+                    "title": "Consultorios"
+                  },
+                  {
+                    "title": "Clientes retirados"
+                  },
+                  {
+                    "title": "Dr. Gil"
+                  },
+                  {
+                    "title": "Evolucionar"
+                  },
+                  {
+                    "title": "Gemssa"
+                  },
+                  {
+                    "title": "Garciacifuentes"
+                  },
+                  {
+                    "title": "Grupo Synlab"
+                  },
+                  {
+                    "title": "Help"
+                  },
+                  {
+                    "title": "Humanfine"
+                  },
+                  {
+                    "title": "Intersalud"
+                  },
+                  {
+                    "title": "Labintox"
+                  },
+                  {
+                    "title": "Laborpositiva"
+                  },
+                  {
+                    "title": "Lecmac"
+                  },
+                  {
+                    "title": "Lih"
+                  },
+                  {
+                    "title": "LorenaVejarano"
+                  },
+                  {
+                    "title": "Lupatech"
+                  },
+                  {
+                    "title": "Mansarovar"
+                  },
+                  {
+                    "title": "Medilabor"
+                  },
+                  {
+                    "title": "Medilac"
+                  },
+                  {
+                    "title": "Medimovil"
+                  },
+                  {
+                    "title": "Medishi"
+                  },
+                  {
+                    "title": "Megasistencia"
+                  },
+                  {
+                    "title": "Miratusalud"
+                  },
+                  {
+                    "title": "MyM"
+                  },
+                  {
+                    "title": "Naturalcorp"
+                  },
+                  {
+                    "title": "Niehans"
+                  },
+                  {
+                    "title": "Omarrivera"
+                  },
+                  {
+                    "title": "Omnisalud"
+                  },
+                  {
+                    "title": "Otoniel-Koactuar"
+                  },
+                  {
+                    "title": "Otros servicios"
+                  },
+                  {
+                    "title": "Praxis"
+                  },
+                  {
+                    "title": "QuironPrevencion"
+                  },
+                  {
+                    "title": "Reqpera"
+                  },
+                  {
+                    "title": "RVG"
+                  },
+                  {
+                    "title": "Saanu"
+                  },
+                  {
+                    "title": "SaludOcupacionalTotal"
+                  },
+                  {
+                    "title": "SandraZabala"
+                  },
+                  {
+                    "title": "Servimendisst"
+                  },
+                  {
+                    "title": "Serviso"
+                  },
+                  {
+                    "title": "SGM"
+                  },
+                  {
+                    "title": "Selika"
+                  },
+                  {
+                    "title": "Sh1a"
+                  },
+                  {
+                    "title": "Sidel"
+                  },
+                  {
+                    "title": "Sisomed"
+                  },
+                  {
+                    "title": "Soinco"
+                  },
+                  {
+                    "title": "Soulmedical"
+                  },
+                  {
+                    "title": "Tianips"
+                  },
+                  {
+                    "title": "Tusaludlaboral"
+                  },
+                  {
+                    "title": "Unirsalud"
+                  },
+                  {
+                    "title": "Urobosque"
+                  },
+                  {
+                    "title": "Visalrt"
+                  },
+                  {
+                    "title": "VST"
+                  }
+                ],
+                "deleted_at": null,
+                "is_required": false,
+                "pivot": {
+                  "contact_id": 436199013,
+                  "custom_field_id": 612863,
+                  "value": "Reqpera",
+                  "created_at": "2024-04-03T19:50:28.000000Z",
+                  "updated_at": "2024-04-03T19:50:28.000000Z"
+                }
+              }
+            ]
+          }
+        ],
+        "meta": null,
+        "parent": null,
+        "reactionSums": [],
+        "is_auto_reply": null,
+        "delivery": null,
+        "email_message": {
+          "collapsed": true
+        }
+      }
+    ],
+    "links": {
+      "first": "https://app.trengo.com/api/v2/tickets/839278382/messages?page=1",
+      "last": null,
+      "prev": null,
+      "next": null
+    },
+    "meta": {
+      "current_page": 1,
+      "from": 1,
+      "path": "https://app.trengo.com/api/v2/tickets/839278382/messages",
+      "per_page": 20,
+      "to": 6
+    }
+  }

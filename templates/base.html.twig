@@ -11,15 +11,30 @@
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		<link href="{{ asset('build/app.css') }}" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
-		 <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-			{% block stylesheets %}
-		{{ encore_entry_link_tags('app') }}
+		<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
 
-			{% block javascripts %}
-		{{ encore_entry_script_tags('app') }}
-	{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
 	</head>
-		<body>{% block body %}
-	{% endblock %}
+
+	<body x-data="{ expanded: false }" class="flex min-h-screen"></body>
+
+	<aside
+		:class="expanded ? 'w-64' : 'w-14'" class="transition-all duration-300 bg-white border-e border-grey-200 ">
+		{# Aquí renderizamos el bloque sidebar #}
+		{% block sidebar %}
+			{# {% include 'layout/_sidebar.html.twig' %} #}
+
+			{{ render(path('app_sidebar')) }}
+
+		{% endblock %}
+	</aside>
+
+	<main class="flex p-4 transition-all duration-300"> {% block body %}{% endblock %}
+		</main>
+	</html>
 </body></html>

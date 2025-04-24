@@ -1,0 +1,199 @@
+<div x-data="{ sidebarOpen: false}" class="z-50 flex">
+
+	<button @click="if (window.innerWidth < 1024) { sidebarOpen = !sidebarOpen; expanded = true } else { expanded = !expanded }" class="text-gray-700 lg:hidden">
+		<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+			<path d="M4 6h16M4 12h16M4 18h16"/>
+		</svg>
+	</button>
+
+	<!-- Fondo oscuro cuando el menú está abierto en mobile -->
+	<div x-show="sidebarOpen" @click="sidebarOpen = false" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-50" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="opacity-50" x-transition:leave-end="opacity-0" class="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+
+	<!-- Sidebar -->
+	<div :class="[
+					sidebarOpen ? 'translate-x-0' : '-translate-x-full',
+					'transform w-60 transition-all duration-300 fixed top-0 left-0 bottom-0 z-50 bg-white overflow-visible',
+					expanded ? 'lg:w-64' : 'lg:w-14',
+					'lg:translate-x-0 lg:static'
+				]">
+		<div
+			class="relative flex flex-col h-full max-h-full">
+			<!-- Header -->
+			<header class="p-4 flex justify-between items-center gap-x-2">
+				<div :class="expanded ? 'block' : 'hidden'">
+					<a class="flex-none font-semibold text-xl text-black focus:outline-hidden focus:opacity-80 dark:text-white" href="#" aria-label="Brand">Brand</a>
+				</div>
+				<!-- Botón de hamburguesa siempre visible -->
+				<button @click="window.innerWidth < 1024 ? sidebarOpen = !sidebarOpen : expanded = !expanded" class="text-gray-700 hidden lg:block">
+
+					<svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewbox="0 0 24 24" stroke-width="2">
+						<path d="M4 6h16M4 12h16M4 18h16"/>
+					</svg>
+				</button>
+
+				<div
+					class="lg:hidden -me-2">
+					<!-- Close Button para mobile -->
+					<button @click="sidebarOpen = false" type="button" class="flex justify-center items-center gap-x-3 size-6 bg-white border border-gray-200 text-sm text-gray-600 hover:bg-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
+						<svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path d="M18 6 6 18"/>
+							<path d="m6 6 12 12"/>
+						</svg>
+						<span class="sr-only">Close</span>
+					</button>
+				</div>
+			</header>
+			<!-- End Header -->
+
+			<!-- Body -->
+			<nav class="h-full overflow-y-visible relative z-0">
+				<div class="hs-accordion-group pb-0 px-2 w-auto flex flex-col flex-wrap">
+					{% for menu in menus %}
+						<ul
+							class="space-y-1">
+							<!-- Dashboard -->
+
+							{% if (menu.idFunctionality is not empty and menu.IdMenuParent is null) %}
+								<li class="relative">
+									<div class="group">
+										<a class="flex items-center gap-x-3.5 py-2 px-2.5 text-gray-800 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white" href="#">
+											<svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+												<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+												<polyline points="9 22 9 12 15 12 15 22"/>
+											</svg>
+											<div :class="expanded ? 'block' : 'hidden'" class="text-sm text-gray-800 dark:text-neutral-200">
+												{{ menu.menu }}
+											</div>
+										</a>
+										<div x-show="!expanded" class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-700 text-white text-xs rounded shadow opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-50">
+											{{ menu.menu }}
+										</div>
+									</div>
+								</li>
+							{% endif %}
+
+							{% if(menu.IdMenuParent is null) %}
+
+								<li x-data="{ open: false }" class="relative">
+									<div class="group">
+										<button @click="open = !open" type="button" class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:text-neutral-200">
+											<svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+												<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+												<circle cx="9" cy="7" r="4"/>
+												<path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+												<path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+											</svg>
+											<div :class="expanded ? 'block' : 'hidden'" class="flex justify-between text-sm text-gray-800 dark:text-neutral-200 w-full">
+												<div>
+													{{ menu.menu }}
+												</div>
+												<div>
+													<svg x-show="!open" class="ms-auto size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+														<path d="m6 9 6 6 6-6"/>
+													</svg>
+													<svg x-show="open" class="ms-auto size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+														<path d="m18 15-6-6-6 6"/>
+													</svg>
+												</div>
+											</div>
+											<div x-show="!expanded" class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-700 text-white text-xs rounded shadow opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-50">
+												{{ menu.menu }}
+											</div>
+										</button>
+									</div>
+
+									<template x-if="!expanded">
+										<div x-show="open" @click.outside="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-x-1" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 translate-x-1" x-cloak class="absolute left-full top-5 mt-2 w-48 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded shadow-lg z-50">
+											<ul class="py-1 text-sm text-gray-700 dark:text-neutral-200">
+												{% for child in menuChildren[menu.id]|default([]) %}
+													{% if child.idfunctionality %}
+														<li>
+															<a href="{{ child.idFunctionality.router }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">
+																{{ child.menu }}
+															</a>
+														</li>
+													{% else %}
+														<li x-data="{ open: false }">
+															<button @click="open = !open" class="flex justify-between w-full py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">
+																{{ child.menu }}
+																<svg x-show="!open" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+																<svg x-show="open" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+															</button>
+															<div x-show="open" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-96" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="max-h-96" x-transition:leave-end="max-h-0" x-cloak class="ps-5 overflow-hidden">
+																<ul class="py-1">
+																	{% for grandchild in menuChildren[child.id]|default([]) %}
+																		{% if grandchild.idfunctionality %}
+																			<li>
+																				<a href="{{ grandchild.idFunctionality.router }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">{{ grandchild.menu }}</a>
+																			</li>
+																		{% else %}
+																			<span class="text-xs text-gray-500 dark:text-gray-400">Falta idfunctionality</span>
+																		</ul>
+																	{% endif %}
+																{% endfor %}
+															</div>
+														</li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</div>
+									</template>
+
+									<!-- Submenú colapsable normal cuando sidebar está expandido -->
+									<template x-if="expanded">
+										<div x-show="open" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-96" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="max-h-96" x-transition:leave-end="max-h-0" x-cloak class="ps-5 overflow-hidden">
+											<ul class="pt-1 space-y-1">
+
+												{% for child in menuChildren[menu.id]|default([]) %}
+													{% if child.idfunctionality %}
+														<li>
+															<a href="{{ child.idfunctionality.router }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">
+																{{ child.menu }}
+															</a>
+														</li>
+													{% else %}
+														<!-- Submenú anidado -->
+														<li x-data="{ open: false }">
+															<button @click="open = !open" class="w-full flex items-center justify-between py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">
+																{{ child.menu }}
+																<svg x-show="!open" class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+																<svg x-show="open" class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+															</button>
+
+															<div x-show="open" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-96" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="max-h-96" x-transition:leave-end="max-h-0" x-cloak class="ps-5 overflow-hidden">
+																<ul class="pt-1 space-y-1">
+																	{% for grandchild in menuChildren[child.id]|default([]) %}
+																		{% if grandchild.idfunctionality %}
+																			<li>
+																				<a href="{{ grandchild.idfunctionality.router }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">{{ grandchild.menu }}</a>
+																			</li>
+																		{% else %}
+																			<!-- Si necesitas más niveles, aquí puedes repetir el patrón -->
+																			<li>
+																				<span class="text-xs text-gray-500 dark:text-gray-400">Falta idfunctionality</span>
+																			</li>
+																		{% endif %}
+																	{% endfor %}
+																</ul>
+															</div>
+														</li>
+													{% endif %}
+												{% endfor %}
+
+											</ul>
+										</div>
+									</template>
+
+
+								</li>
+
+							{% endif %}
+						</ul>
+					{% endfor %}
+				</div>
+			</nav>
+			<!-- End Body -->
+		</div>
+	</div>
+	<!-- End Sidebar -->
+</div>

@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Tickets;
 use App\Repository\TicketsRepository;
-use App\Services\TicketsSyncService;
 use App\Services\TrengoServices;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,62 +15,52 @@ class RoutesController extends AbstractController
 {
 
     private TrengoServices $trengoServices;
-    private TicketsSyncService $ticketSync;
 
-    public function __construct(TrengoServices $trengoServices, TicketsSyncService $ticketSync)
+    public function __construct(TrengoServices $trengoServices)
     {
         $this->trengoServices = $trengoServices;
-        $this->ticketSync = $ticketSync;
     }
 
-    #[Route('/tickets', name: 'tickets')]
-    public function index(
-        Request $request,
-        TicketsRepository $ticketsRepo
-    ) {
+    #[Route('/', name: 'index')]
+    public function fetchData(Request $request, TicketsRepository $tickets)
+    {
+
         $itemsPerPage = 10;
         $page = max(1, $request->query->getInt('page', 1));
-
-        // 1) Cuántos necesito para esta página
-        $needed = $itemsPerPage * $page;
-
-        // 2) Cargo solo hasta esa cantidad
-        $this->ticketSync->ensureLoaded($needed);
-
-        // 3) Actualizo **solo** la página actual
-        $this->ticketSync->syncPageUpdates($page);
-
-        // 4) Finalmente leo de la BD local
         $offset = ($page - 1) * $itemsPerPage;
-        $paginator = $ticketsRepo->getTicketsPaginator($offset, $itemsPerPage, $request->query->all());
+
+        dump($request->query->all());
+
+        $paginator = $tickets->getTicketsPaginator($offset, $itemsPerPage, $request->query->all());
 
         $totalCount = count($paginator);
         $totalPages = (int) ceil($totalCount / $itemsPerPage);
 
-        return $this->render('pages/trengo/tickets.html.twig', [
-            'tickets'     => $paginator,
-            'totalCount'  => $totalCount,
-            'totalPages'  => $totalPages,
-            'offset'      => $offset,
-            'page'        => $page,
+        return $this->render('index.html.twig', [
+            'tickets' => $paginator,
+            'totalCount' => $totalCount,
+            'totalPages' => $totalPages,
+            'offset' => $offset,
+            'page' => $page,
             'itemsPerPage' => $itemsPerPage,
-            'filters'     => [
-                'status'     => $request->query->get('status'),
+            "filters" => [
+                'status' => $request->query->get('status'),
                 'date_start' => $request->query->get('date_start'),
-                'date_end'   => $request->query->get('date_end'),
+                'date_end' => $request->query->get('date_end'),
             ],
         ]);
     }
 
-    #[Route('/allmessage', name: 'all_messages')]
-    public function fetchTickets(Request $request)
+    #[Route('/tickets', name: 'tickets', methods: ['GET'])]
+    public function fetchTickets(Request $request): JsonResponse
     {
+
+        print_r($request->query->all());
+
         // Obtener parámetros desde la URL
         $page = $request->query->get('page', 1); // Valor por defecto: 1
         $labels = $request->query->all('labels', 1645368); // Array de etiquetas
         $sort = $request->query->get('sort', '-date'); // Valor por defecto: -date
-
-        $ticket_id = 839278382;
 
         // Construir los parámetros
         $queryParams = [
@@ -78,11 +69,9 @@ class RoutesController extends AbstractController
             'sort' => $sort,
         ];
 
-        $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages');
+        $data = $this->trengoServices->request('/tickets', $queryParams);
 
-        dump($data);
-
-        return $this->render('/pages/trengo/allmessages.html.twig');
+        return new JsonResponse($data);
     }
 
     #[Route('tickets/{ticket_id}/messages', name: 'ticket', methods: ['GET'])]

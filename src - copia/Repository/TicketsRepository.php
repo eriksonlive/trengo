@@ -50,22 +50,6 @@ class TicketsRepository extends ServiceEntityRepository
         return new Paginator($query);
     }
 
-    public function getStatesMap(): array
-    {
-        // obtenemos solo id y status
-        $rows = $this->createQueryBuilder('t')
-            ->select('t.id, t.status')
-            ->getQuery()
-            ->getArrayResult();
-
-        $map = [];
-        foreach ($rows as $r) {
-            $map[(int)$r['id']] = $r['status'];
-        }
-
-        return $map;
-    }
-
     //    /**
     //     * @return Tickets[] Returns an array of Tickets objects
     //     */

@@ -7,29 +7,18 @@ use App\Services\TrengoServices;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Validator\Constraints\Json;
-use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 class TicketsController extends AbstractController
 {
-
-    private LoggerInterface $trengoLogger;
-
-    public function __construct(LoggerInterface $trengoLogger)
-    {
-        $this->trengoLogger = $trengoLogger;
-    }
-
-    #[Route('/ticket', name: 'ticket')]
-    public function getAllTickets(
+    #[Route('/ticks/example', name: 'ticks')]
+    public function index(
         Request $request,
         EntityManagerInterface $entityManager,
         TrengoServices $trengoServices
-    ): JsonResponse {
+    ): Response {
         $labels = 1645368;
         $sort = '-date';
         $page = 1;
@@ -95,43 +84,22 @@ class TicketsController extends AbstractController
 
         $entityManager->flush();
 
-        return JsonResponse::fromJsonString(
-            json_encode([
-                'status' => 'success',
-                'message' => 'Tickets procesados correctamente',
-            ])
-        );
+        return $this->render('index.html.twig', [
+            'message' => 'Tickets actualizados correctamente',
+        ]);
     }
 
     #[Route('/webhook/trengo', name: 'webhook_trengo', methods: ['POST', 'GET'])]
-    public function webhookTrengo(Request $request): Response
+    public function webhookTrengo(Request $request, LoggerInterface $logger): Response
     {
         $content = $request->getContent();
-        parse_str($content, $data);
+        $data = json_decode($content, true);
 
-        $signature = $request->headers->get('X-Trengo-Signature');
-        $secret = $_ENV['TRENGO_WEBHOOK_SECRET'] ?? null;
-
-        if ($secret && $signature) {
-            $expected = hash_hmac('sha256', $content, $secret);
-
-            if (!hash_equals($expected, $signature)) {
-                $this->trengoLogger->warning('Firma de Trengo inválida', [
-                    'expected' => $expected,
-                    'received' => $signature,
-                ]);
-
-                return new Response('Firma inválida', Response::HTTP_FORBIDDEN);
-            }
-        }
-
-        // Guardar en log para debug
         file_put_contents(__DIR__ . '/../../var/log/trengo_webhook.log', print_r($data, true), FILE_APPEND);
-        $this->trengoLogger->info('Webhook de Trengo recibido', [
-            'data' => $data,
-        ]);
+        // $logger->info('Webhook Trengo recibido', $data);
+        // Aquí puedes manejar la lógica del webhook de Trengo
+        // Por ejemplo, guardar los datos en la base de datos o procesarlos de alguna manera
 
-        // TODO: guardar en base de datos
         return new Response('Webhook recibido', Response::HTTP_OK);
     }
 

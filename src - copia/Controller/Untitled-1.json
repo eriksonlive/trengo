@@ -1,0 +1,600 @@
+{
+  "data": [
+    {
+      "id": 3894150306,
+      "ticket_id": 836548638,
+      "type": "OUTBOUND",
+      "body_type": "TEXT",
+      "message": " Estimado administrativo@reqperaips.com,  La mesa de servicio SGM confirma la recepción de su solicitud cuyo ticket asignado es el siguiente: 838248513. El caso será analizado y procesado dentro de los tiempos establecidos en los ANS, conocemos la importancia de su requerimiento y trabajarémos para resolverlo.     PRIORIDAD    DESCRIPCIÓN    TIEMPO DE DIAGNÓSTICO    TIEMPO DE SOLUCIÓN   (Hrs Hábiles)     Alta   -La aplicación no funciona, se encuentra deshabilitada o no responde.   -Facturación crédito.  -Cambio de contraseñas de las cuentas de correo de notificaciones.    30 minutos   4 horas    Media   La aplicación está funcionando, pero algunos de los componentes menores presentan un funcionamiento anormal.   8 horas   24 horas    Baja   La aplicación presenta anomalías que no impactan el servicio.   12 horas   48 horas    Planeado / Mantenimiento   Ajustes de reportes ya existentes o modificación de plantillas, capacitaciones o requerimientos nuevos que puedan generar o no control de cambios.   24 horas   Fecha establecida.     Agradecemos la atención.   Cordial saludo,  Mesa de servicio   SGM Tecnología en Internet ",
+      "file_name": null,
+      "file_caption": null,
+      "location_data": null,
+      "created_at": "2025-04-08 21:40:21",
+      "updated_at": "2025-04-08 22:16:23",
+      "user_id": null,
+      "contact": {
+        "id": 436199013,
+        "name": "administrativo@reqperaips.com",
+        "full_name": "administrativo@reqperaips.com",
+        "email": "administrativo@reqperaips.com",
+        "abbr": "a",
+        "color": "#f44336",
+        "profile_image": null,
+        "is_phone": false,
+        "phone": null,
+        "formatted_phone": null,
+        "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+        "identifier": "administrativo@reqperaips.com",
+        "custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "pivot": null,
+        "formatted_custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "display_name": "administrativo@reqperaips.com",
+        "is_private": false,
+        "custom_field_values": [
+          {
+            "custom_field_id": 612863,
+            "field_name": "Cliente",
+            "value": "Reqpera"
+          }
+        ]
+      },
+      "agent": null,
+      "attachments": [],
+      "mentions": [],
+      "contacts": [],
+      "meta": null,
+      "parent": null,
+      "reactionSums": [],
+      "is_auto_reply": 1,
+      "delivery": null,
+      "email_message": {
+        "collapsed": true
+      }
+    },
+    {
+      "id": 3894150304,
+      "ticket_id": 836548638,
+      "type": "INBOUND",
+      "body_type": "TEXT",
+      "message": "Buenas Tardes Agradecemos su amable colaboración con lo solicitado de correo en cola bajo el ticket 836548638 el cual al momento no hemos tenido respuesta y todavía las ordenes medicas a la fecha siguen apareciendo sin la información que tenían en el modelo anterior. Adjunto pantallazo del numero del ticket y ordene medica de hoy 08/04/2025    Quedamos atentos a su pronta y prioritaria respuesta  Cordialmente, Wendy RamirezAnalista Técnica Tel: 6415967 - 3016471946Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505REQPERA IPS SAS   De: administrativo@reqperaips.com &lt;administrativo@reqperaips.com&gt; Enviado el: lunes, 31 de marzo de 2025 01:28 p. m.Para: 'Camilo | SGM TECNOLOGIA EN INTERNET S.A.S.' &lt;soporte@sgm.com.co&gt;Asunto: Solicitud ajuste en la actualización orden medica información faltante vs la anterior REQPERA IPS Importancia: Alta Buenas Tardes Agradecemos su amable colaboración con la revision de las actualización de los formatos de ordenes médicas, debido a que de acuerdo a la última actualización realizadas por ustedes nos hace falta la siguiente información que teníamos en las ordenes medicas anteriores (información de Reqpera IPS dirección, teléfonos y correo electrónico) adicional de información de la empresa o en su defecto el ARL teniendo en cuenta que nuestra IPS maneja pacientes del ARL y no de EPS, y  al momento de autorizar dichas ordenes por el ARL son devueltas al faltar esta información. Adjunto pantallazo del formato de ordenes anterior donde especifica la información y el modelo de orden nueva.  Modelo de orden necesaria anterior con información completa:  Modelo de orden medica actual y sin la información:  Agradecemos su atención y respuesta prioritaria a esta solicitud, teniendo en cuenta que como estamos realizando consultas ya estamos teniendo inconvenientes con nuestro cliente ARL, por esta información faltante  Cordialmente, Wendy RamirezAnalista Técnica Tel: 6415967 - 3016471946Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505REQPERA IPS SAS",
+      "file_name": null,
+      "file_caption": null,
+      "location_data": null,
+      "created_at": "2025-04-08 21:40:20",
+      "updated_at": "2025-04-08 22:16:23",
+      "user_id": null,
+      "contact": {
+        "id": 436199013,
+        "name": "administrativo@reqperaips.com",
+        "full_name": "administrativo@reqperaips.com",
+        "email": "administrativo@reqperaips.com",
+        "abbr": "a",
+        "color": "#f44336",
+        "profile_image": null,
+        "is_phone": false,
+        "phone": null,
+        "formatted_phone": null,
+        "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+        "identifier": "administrativo@reqperaips.com",
+        "custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "pivot": null,
+        "formatted_custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "display_name": "administrativo@reqperaips.com",
+        "is_private": false,
+        "custom_field_values": [
+          {
+            "custom_field_id": 612863,
+            "field_name": "Cliente",
+            "value": "Reqpera"
+          }
+        ]
+      },
+      "agent": null,
+      "attachments": [],
+      "mentions": [],
+      "contacts": [
+        {
+          "id": 299707999,
+          "agency_id": 175635,
+          "title": "MR",
+          "first_name": null,
+          "last_name": null,
+          "full_name": "ccamargo@sgm.com.co",
+          "street_name": null,
+          "house_no": null,
+          "zip_code": null,
+          "city": null,
+          "whatsapp_phone_id": null,
+          "phone": null,
+          "color": "#673ab7",
+          "image_path": null,
+          "email": "ccamargo@sgm.com.co",
+          "is_synced": 1,
+          "custom_field_data": {
+            "Cliente": "SGM"
+          },
+          "created_at": "2022-09-24T00:22:16.000000Z",
+          "updated_at": "2022-09-24T00:22:16.000000Z",
+          "deleted_at": null,
+          "deleted_by": null,
+          "name": "ccamargo@sgm.com.co",
+          "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+          "profile_image": null,
+          "formatted_custom_field_data": {
+            "Cliente": "SGM"
+          },
+          "formatted_phone": null,
+          "abbr": "c",
+          "is_phone": false,
+          "identifier": "ccamargo@sgm.com.co",
+          "is_private": false,
+          "pivot": {
+            "message_id": 3894150304,
+            "contact_id": 299707999,
+            "ticket_id": 838248513,
+            "type": "CC",
+            "created_at": "2025-04-08T19:40:20.000000Z",
+            "updated_at": "2025-04-08T19:40:20.000000Z"
+          },
+          "users": [],
+          "custom_fields": [
+            {
+              "id": 612863,
+              "title": "Cliente",
+              "agency_id": 175635,
+              "sort_order": -1,
+              "type": "CONTACT",
+              "created_at": "2023-11-24T22:03:01.000000Z",
+              "updated_at": "2025-03-17T19:13:02.000000Z",
+              "identifier": "cliente",
+              "field_type": "DROPDOWN",
+              "placeholder": "Seleccione cliente",
+              "meta": [
+                {
+                  "title": "AndresPrada"
+                },
+                {
+                  "title": "Aspen"
+                },
+                {
+                  "title": "Atmela"
+                },
+                {
+                  "title": "Audiomedicpereira"
+                },
+                {
+                  "title": "Cajasan"
+                },
+                {
+                  "title": "Cardiocenter"
+                },
+                {
+                  "title": "CenaSIP"
+                },
+                {
+                  "title": "Cendiatra"
+                },
+                {
+                  "title": "Colsubsidio"
+                },
+                {
+                  "title": "Comfaguajira"
+                },
+                {
+                  "title": "Controlar"
+                },
+                {
+                  "title": "Consultorios"
+                },
+                {
+                  "title": "Clientes retirados"
+                },
+                {
+                  "title": "Dr. Gil"
+                },
+                {
+                  "title": "Evolucionar"
+                },
+                {
+                  "title": "Gemssa"
+                },
+                {
+                  "title": "Garciacifuentes"
+                },
+                {
+                  "title": "Grupo Synlab"
+                },
+                {
+                  "title": "Help"
+                },
+                {
+                  "title": "Humanfine"
+                },
+                {
+                  "title": "Intersalud"
+                },
+                {
+                  "title": "Labintox"
+                },
+                {
+                  "title": "Laborpositiva"
+                },
+                {
+                  "title": "Lecmac"
+                },
+                {
+                  "title": "Lih"
+                },
+                {
+                  "title": "LorenaVejarano"
+                },
+                {
+                  "title": "Lupatech"
+                },
+                {
+                  "title": "Mansarovar"
+                },
+                {
+                  "title": "Medilabor"
+                },
+                {
+                  "title": "Medilac"
+                },
+                {
+                  "title": "Medimovil"
+                },
+                {
+                  "title": "Medishi"
+                },
+                {
+                  "title": "Megasistencia"
+                },
+                {
+                  "title": "Miratusalud"
+                },
+                {
+                  "title": "MyM"
+                },
+                {
+                  "title": "Naturalcorp"
+                },
+                {
+                  "title": "Niehans"
+                },
+                {
+                  "title": "Omarrivera"
+                },
+                {
+                  "title": "Omnisalud"
+                },
+                {
+                  "title": "Otoniel-Koactuar"
+                },
+                {
+                  "title": "Otros servicios"
+                },
+                {
+                  "title": "Praxis"
+                },
+                {
+                  "title": "QuironPrevencion"
+                },
+                {
+                  "title": "Reqpera"
+                },
+                {
+                  "title": "RVG"
+                },
+                {
+                  "title": "Saanu"
+                },
+                {
+                  "title": "SaludOcupacionalTotal"
+                },
+                {
+                  "title": "SandraZabala"
+                },
+                {
+                  "title": "Servimendisst"
+                },
+                {
+                  "title": "Serviso"
+                },
+                {
+                  "title": "SGM"
+                },
+                {
+                  "title": "Selika"
+                },
+                {
+                  "title": "Sh1a"
+                },
+                {
+                  "title": "Sidel"
+                },
+                {
+                  "title": "Sisomed"
+                },
+                {
+                  "title": "Soinco"
+                },
+                {
+                  "title": "Soulmedical"
+                },
+                {
+                  "title": "Tianips"
+                },
+                {
+                  "title": "Tusaludlaboral"
+                },
+                {
+                  "title": "Unirsalud"
+                },
+                {
+                  "title": "Urobosque"
+                },
+                {
+                  "title": "Visalrt"
+                },
+                {
+                  "title": "VST"
+                }
+              ],
+              "deleted_at": null,
+              "is_required": false,
+              "pivot": {
+                "contact_id": 299707999,
+                "custom_field_id": 612863,
+                "value": "SGM",
+                "created_at": "2024-04-11T15:52:13.000000Z",
+                "updated_at": "2024-09-05T14:12:28.000000Z"
+              }
+            }
+          ]
+        }
+      ],
+      "meta": null,
+      "parent": null,
+      "reactionSums": [],
+      "is_auto_reply": null,
+      "delivery": null,
+      "email_message": {
+        "id": 1121308373,
+        "plain": null,
+        "html": "<html xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\"><head><meta http-equiv=Content-Type content=\"text/html; charset=iso-8859-1\"><meta name=Generator content=\"Microsoft Word 15 (filtered medium)\"><!--[if !mso]><style>v\\:* {behavior:url(#default#VML);}\r\no\\:* {behavior:url(#default#VML);}\r\nw\\:* {behavior:url(#default#VML);}\r\n.shape {behavior:url(#default#VML);}\r\n</style><![endif]--><style><!--\r\n/* Font Definitions */\r\n@font-face\r\n\t{font-family:\"Cambria Math\";\r\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\r\n@font-face\r\n\t{font-family:Calibri;\r\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\r\n@font-face\r\n\t{font-family:Aptos;}\r\n@font-face\r\n\t{font-family:Tahoma;\r\n\tpanose-1:2 11 6 4 3 5 4 4 2 4;}\r\n/* Style Definitions */\r\np.MsoNormal, li.MsoNormal, div.MsoNormal\r\n\t{margin:0cm;\r\n\tfont-size:11.0pt;\r\n\tfont-family:\"Aptos\",sans-serif;\r\n\tmso-ligatures:standardcontextual;\r\n\tmso-fareast-language:EN-US;}\r\nspan.EstiloCorreo19\r\n\t{mso-style-type:personal-reply;\r\n\tfont-family:\"Tahoma\",sans-serif;\r\n\tcolor:#002060;}\r\n.MsoChpDefault\r\n\t{mso-style-type:export-only;\r\n\tfont-size:10.0pt;\r\n\tmso-ligatures:none;}\r\n@page WordSection1\r\n\t{size:612.0pt 792.0pt;\r\n\tmargin:70.85pt 3.0cm 70.85pt 3.0cm;}\r\ndiv.WordSection1\r\n\t{page:WordSection1;}\r\n--></style><!--[if gte mso 9]><xml>\r\n<o:shapedefaults v:ext=\"edit\" spidmax=\"1026\" />\r\n</xml><![endif]--><!--[if gte mso 9]><xml>\r\n<o:shapelayout v:ext=\"edit\">\r\n<o:idmap v:ext=\"edit\" data=\"1\" />\r\n</o:shapelayout></xml><![endif]--></head><body lang=ES-CO link=\"#467886\" vlink=\"#96607D\" style='word-wrap:break-word'><div class=WordSection1><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Buenas Tardes<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Agradecemos su amable colaboración con lo solicitado de correo en cola bajo el ticket 836548638 el cual al momento no hemos tenido respuesta y todavía las ordenes medicas a la fecha siguen apareciendo sin la información que tenían en el modelo anterior.<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Adjunto pantallazo del numero del ticket y ordene medica de hoy 08/04/2025<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none'><img width=680 height=523 style='width:7.0833in;height:5.4479in' id=\"_x0000_i1030\" src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/zw5hzinbuv-image004.png\"></span><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none'><img width=574 height=437 style='width:5.9791in;height:4.552in' id=\"_x0000_i1029\" src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/us9z0oifz5-image001.png\"></span><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Quedamos atentos a su pronta y prioritaria respuesta <o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Cordialmente,<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#2F5496;mso-ligatures:none;mso-fareast-language:ES-CO'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#2F5496;mso-ligatures:none;mso-fareast-language:ES-CO'><img width=111 height=36 style='width:1.1562in;height:.375in' id=\"Imagen_x0020_1241000605\" src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/aqmoeuzegy-image007.jpg\" alt=\"Logo horizontal Reqpera 2017\"></span><span style='font-family:\"Tahoma\",sans-serif;color:#1F497D;mso-ligatures:none;mso-fareast-language:ES'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Wendy Ramirez<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Analista Técnica </span><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES'>Tel: 6415967 - 3016471946<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>REQPERA IPS SAS</span><span style='font-family:\"Calibri\",sans-serif;color:#002060;mso-ligatures:none'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><div><div style='border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm'><p class=MsoNormal><b><span lang=ES style='font-family:\"Calibri\",sans-serif;mso-ligatures:none;mso-fareast-language:ES-CO'>De:</span></b><span lang=ES style='font-family:\"Calibri\",sans-serif;mso-ligatures:none;mso-fareast-language:ES-CO'> administrativo@reqperaips.com &lt;administrativo@reqperaips.com&gt; <br><b>Enviado el:</b> lunes, 31 de marzo de 2025 01:28 p. m.<br><b>Para:</b> 'Camilo | SGM TECNOLOGIA EN INTERNET S.A.S.' &lt;soporte@sgm.com.co&gt;<br><b>Asunto:</b> Solicitud ajuste en la actualización orden medica información faltante vs la anterior REQPERA IPS <br><b>Importancia:</b> Alta<o:p></o:p></span></p></div></div><p class=MsoNormal><o:p>&nbsp;</o:p></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Buenas Tardes<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Agradecemos su amable colaboración con la revision de las actualización de los formatos de ordenes médicas, debido a que de acuerdo a la última actualización realizadas por ustedes nos hace falta la siguiente información que teníamos en las ordenes medicas anteriores (información de Reqpera IPS dirección, teléfonos y correo electrónico) adicional de información de la empresa o en su defecto el ARL teniendo en cuenta que nuestra IPS maneja pacientes del ARL y no de EPS, y &nbsp;al momento de autorizar dichas ordenes por el ARL son devueltas al faltar esta información. Adjunto pantallazo del formato de ordenes anterior donde especifica la información y el modelo de orden nueva.<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Modelo de orden necesaria anterior con información completa:<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none'><img width=812 height=428 style='width:8.4583in;height:4.4583in' id=\"Imagen_x0020_2\" src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/cylbvvykrl-image005.png\"></span><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Modelo de orden medica actual y sin la información:<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none'><img width=815 height=600 style='width:8.4895in;height:6.25in' id=\"_x0000_i1026\" src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/notu6cbkkq-image006.png\"></span><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'>Agradecemos su atención y respuesta prioritaria a esta solicitud, teniendo en cuenta que como estamos realizando consultas ya estamos teniendo inconvenientes con nuestro cliente ARL, por esta información faltante<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Cordialmente,<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#2F5496;mso-ligatures:none;mso-fareast-language:ES-CO'><o:p>&nbsp;</o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#2F5496;mso-ligatures:none;mso-fareast-language:ES-CO'><img width=111 height=36 style='width:1.1562in;height:.375in' id=\"Imagen_x0020_1\" src=\"https://s3.eu-central-1.amazonaws.com/trengo/media/aqmoeuzegy-image007.jpg\" alt=\"Logo horizontal Reqpera 2017\"></span><span style='font-family:\"Tahoma\",sans-serif;color:#1F497D;mso-ligatures:none;mso-fareast-language:ES'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Wendy Ramirez<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Analista Técnica </span><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none'><o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES'>Tel: 6415967 - 3016471946<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505<o:p></o:p></span></p><p class=MsoNormal><span style='font-family:\"Tahoma\",sans-serif;color:#002060;mso-ligatures:none;mso-fareast-language:ES-CO'>REQPERA IPS SAS</span><span style='font-family:\"Calibri\",sans-serif;color:#002060;mso-ligatures:none'><o:p></o:p></span></p><p class=MsoNormal><o:p>&nbsp;</o:p></p></div></body></html>",
+        "to": "soporte@sgm.com.co",
+        "cc": "",
+        "from": " <administrativo@reqperaips.com>",
+        "subject": "RE: Solicitud ajuste en la actualización orden medica información faltante vs la anterior REQPERA IPS - TICKET 836548638 sin gestion",
+        "message_id": 3894150304,
+        "created_at": "2025-04-08T19:40:20.000000Z",
+        "updated_at": "2025-04-08T19:40:20.000000Z",
+        "message_identifier": "",
+        "collapsed": false
+      }
+    },
+    {
+      "id": 3887330594,
+      "ticket_id": 836548638,
+      "type": "NOTE",
+      "body_type": "TEXT",
+      "message": "@yarley412784  por favor validar se actualizaron la semana pasada ,es posible que tenga bk si fu un cambio por la nueva versión. Me avisas",
+      "file_name": null,
+      "file_caption": null,
+      "location_data": null,
+      "created_at": "2025-04-01 01:59:36",
+      "updated_at": "2025-04-01 01:59:36",
+      "user_id": 383100,
+      "contact": {
+        "id": 436199013,
+        "name": "administrativo@reqperaips.com",
+        "full_name": "administrativo@reqperaips.com",
+        "email": "administrativo@reqperaips.com",
+        "abbr": "a",
+        "color": "#f44336",
+        "profile_image": null,
+        "is_phone": false,
+        "phone": null,
+        "formatted_phone": null,
+        "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+        "identifier": "administrativo@reqperaips.com",
+        "custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "pivot": null,
+        "formatted_custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "display_name": "administrativo@reqperaips.com",
+        "is_private": false,
+        "custom_field_values": [
+          {
+            "custom_field_id": 612863,
+            "field_name": "Cliente",
+            "value": "Reqpera"
+          }
+        ]
+      },
+      "agent": {
+        "id": 383100,
+        "agency_id": 175635,
+        "first_name": "Nataly",
+        "last_name": "Romero Contreras",
+        "name": "Nataly Romero Contreras",
+        "full_name": "Nataly Romero Contreras",
+        "email": "nromero@sgm.com.co",
+        "abbr": "N",
+        "phone": "+573246026389",
+        "color": "#ff9800",
+        "locale_code": "es-ES",
+        "status": "ACTIVE",
+        "text": "Nataly Romero Contreras",
+        "is_online": 1,
+        "user_status": "ONLINE",
+        "chat_status": "1",
+        "voip_status": null,
+        "voip_device": "WEB",
+        "profile_image": "https://s3.eu-central-1.amazonaws.com/trengo/media/user_3e99be43e05442676e5c9dbc1bdb35ac.jpg",
+        "authorization": "OWNER",
+        "role": {
+          "id": 24,
+          "name": "administrator"
+        },
+        "is_primary": 1,
+        "timezone": "America/Bogota",
+        "created_at": "2021-12-10 23:55:20",
+        "two_factor_authentication_enabled": false
+      },
+      "attachments": [],
+      "mentions": [
+        {
+          "id": 21152475,
+          "agency_id": 175635,
+          "ticket_id": 836548638,
+          "message_id": 3887330594,
+          "user_id": 412784,
+          "seen": 0,
+          "created_at": "2025-03-31T23:59:36.000000Z",
+          "updated_at": "2025-03-31T23:59:36.000000Z"
+        }
+      ],
+      "contacts": [],
+      "meta": null,
+      "parent": null,
+      "reactionSums": [],
+      "is_auto_reply": null,
+      "delivery": null
+    },
+    {
+      "id": 3887174389,
+      "ticket_id": 836548638,
+      "type": "OUTBOUND",
+      "body_type": "TEXT",
+      "message": " Estimado administrativo@reqperaips.com,  La mesa de servicio SGM confirma la recepción de su solicitud cuyo ticket asignado es el siguiente: 836548638. El caso será analizado y procesado dentro de los tiempos establecidos en los ANS, conocemos la importancia de su requerimiento y trabajarémos para resolverlo.     PRIORIDAD    DESCRIPCIÓN    TIEMPO DE DIAGNÓSTICO    TIEMPO DE SOLUCIÓN   (Hrs Hábiles)     Alta   -La aplicación no funciona, se encuentra deshabilitada o no responde.   -Facturación crédito.  -Cambio de contraseñas de las cuentas de correo de notificaciones.    30 minutos   4 horas    Media   La aplicación está funcionando, pero algunos de los componentes menores presentan un funcionamiento anormal.   8 horas   24 horas    Baja   La aplicación presenta anomalías que no impactan el servicio.   12 horas   48 horas    Planeado / Mantenimiento   Ajustes de reportes ya existentes o modificación de plantillas, capacitaciones o requerimientos nuevos que puedan generar o no control de cambios.   24 horas   Fecha establecida.     Agradecemos la atención.   Cordial saludo,  Mesa de servicio   SGM Tecnología en Internet ",
+      "file_name": null,
+      "file_caption": null,
+      "location_data": null,
+      "created_at": "2025-03-31 20:28:14",
+      "updated_at": "2025-04-01 19:15:45",
+      "user_id": null,
+      "contact": {
+        "id": 436199013,
+        "name": "administrativo@reqperaips.com",
+        "full_name": "administrativo@reqperaips.com",
+        "email": "administrativo@reqperaips.com",
+        "abbr": "a",
+        "color": "#f44336",
+        "profile_image": null,
+        "is_phone": false,
+        "phone": null,
+        "formatted_phone": null,
+        "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+        "identifier": "administrativo@reqperaips.com",
+        "custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "pivot": null,
+        "formatted_custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "display_name": "administrativo@reqperaips.com",
+        "is_private": false,
+        "custom_field_values": [
+          {
+            "custom_field_id": 612863,
+            "field_name": "Cliente",
+            "value": "Reqpera"
+          }
+        ]
+      },
+      "agent": null,
+      "attachments": [],
+      "mentions": [],
+      "contacts": [],
+      "meta": null,
+      "parent": null,
+      "reactionSums": [],
+      "is_auto_reply": 1,
+      "delivery": null,
+      "email_message": {
+        "collapsed": true
+      }
+    },
+    {
+      "id": 3887174387,
+      "ticket_id": 836548638,
+      "type": "INBOUND",
+      "body_type": "TEXT",
+      "message": "Buenas Tardes Agradecemos su amable colaboración con la revision de las actualización de los formatos de ordenes médicas, debido a que de acuerdo a la última actualización realizadas por ustedes nos hace falta la siguiente información que teníamos en las ordenes medicas anteriores (información de Reqpera IPS dirección, teléfonos y correo electrónico) adicional de información de la empresa o en su defecto el ARL teniendo en cuenta que nuestra IPS maneja pacientes del ARL y no de EPS, y  al momento de autorizar dichas ordenes por el ARL son devueltas al faltar esta información. Adjunto pantallazo del formato de ordenes anterior donde especifica la información y el modelo de orden nueva.  Modelo de orden necesaria anterior con información completa:  Modelo de orden medica actual y sin la información:  Agradecemos su atención y respuesta prioritaria a esta solicitud, teniendo en cuenta que como estamos realizando consultas ya estamos teniendo inconvenientes con nuestro cliente ARL, por esta información faltante  Cordialmente, Wendy RamirezAnalista Técnica Tel: 6415967 - 3016471946Calle 127 # 19ª-44 Ed. Acomedica II Cons. 505REQPERA IPS SAS",
+      "file_name": null,
+      "file_caption": null,
+      "location_data": null,
+      "created_at": "2025-03-31 20:28:13",
+      "updated_at": "2025-04-01 19:15:45",
+      "user_id": null,
+      "contact": {
+        "id": 436199013,
+        "name": "administrativo@reqperaips.com",
+        "full_name": "administrativo@reqperaips.com",
+        "email": "administrativo@reqperaips.com",
+        "abbr": "a",
+        "color": "#f44336",
+        "profile_image": null,
+        "is_phone": false,
+        "phone": null,
+        "formatted_phone": null,
+        "avatar": "https://assets.trengo.com/release/img/defaultpic.png",
+        "identifier": "administrativo@reqperaips.com",
+        "custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "pivot": null,
+        "formatted_custom_field_data": {
+          "Cliente": "Reqpera"
+        },
+        "display_name": "administrativo@reqperaips.com",
+        "is_private": false,
+        "custom_field_values": [
+          {
+            "custom_field_id": 612863,
+            "field_name": "Cliente",
+            "value": "Reqpera"
+          }
+        ]
+      },
+      "agent": null,
+      "attachments": [],
+      "mentions": [],
+      "contacts": [],
+      "meta": null,
+      "parent": null,
+      "reactionSums": [],
+      "is_auto_reply": null,
+      "delivery": null,
+      "email_message": {
+        "collapsed": true
+      }
+    }
+  ],
+  "links": {
+    "first": "https://app.trengo.com/api/v2/tickets/836548638/messages?page=1",
+    "last": null,
+    "prev": null,
+    "next": null
+  },
+  "meta": {
+    "current_page": 1,
+    "from": 1,
+    "path": "https://app.trengo.com/api/v2/tickets/836548638/messages",
+    "per_page": 20,
+    "to": 5
+  }
+}

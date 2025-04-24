@@ -1,6 +1,7 @@
 monolog:
     channels:
         - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
+        - trengo
 
 when@dev:
     monolog:
@@ -22,6 +23,11 @@ when@dev:
                 type: console
                 process_psr_3_messages: false
                 channels: ["!event", "!doctrine", "!console"]
+            trengo:
+                type: stream
+                path: "%kernel.logs_dir%/trengo.log"
+                level: debug
+                channels: ["trengo"]
 
 when@test:
     monolog:

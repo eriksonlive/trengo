@@ -18,7 +18,7 @@ class TrengoServices
     private int $cacheTtl;
     private string $token;
 
-    public function __construct(CacheInterface $cache, LoggerInterface $logger, ParameterBagInterface $params, int $cacheTtl = 1800)
+    public function __construct(CacheInterface $cache, LoggerInterface $logger, ParameterBagInterface $params, int $cacheTtl = 3600)
     {
         $this->client = new Client();
         $this->cache = $cache;
