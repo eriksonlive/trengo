@@ -21,20 +21,20 @@
 		{% endblock %}
 	</head>
 
-	<body x-data="{ expanded: false }" class="flex min-h-screen"></body>
+	<body x-data="{ expanded: false }" class="flex min-h-screen">
 
-	<aside
-		:class="expanded ? 'w-64' : 'w-14'" class="transition-all duration-300 bg-white border-e border-grey-200 ">
-		{# Aquí renderizamos el bloque sidebar #}
-		{% block sidebar %}
-			{# {% include 'layout/_sidebar.html.twig' %} #}
+		<aside
+			:class="expanded ? 'w-64' : 'w-14'" class="transition-all duration-300 bg-white border-e border-grey-200">
+			{# Aquí renderizamos el bloque sidebar #}
+			{% block sidebar %}
+				{# {% include 'layout/_sidebar.html.twig' %} #}
 
-			{{ render(path('app_sidebar')) }}
+				{{ render(path('app_sidebar')) }}
 
-		{% endblock %}
-	</aside>
+			{% endblock %}
+		</aside>
 
-	<main class="flex p-4 transition-all duration-300"> {% block body %}{% endblock %}
-		</main>
+		<main class="grow p-4 transition-all duration-300 overflow-x-hidden"> {% block body %}{% endblock %}
+			</main>
+		</body>
 	</html>
-</body></html>

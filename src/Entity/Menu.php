@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MenuRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MenuRepository::class)]
@@ -19,8 +21,12 @@ class Menu
     #[ORM\ManyToOne(inversedBy: 'menus')]
     private ?Functionality $idFunctionality = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $IdMenuParent = null;
+    #[ORM\ManyToOne(targetEntity: Menu::class, inversedBy: 'children')]
+    #[ORM\JoinColumn(name: "id_menu_parent", referencedColumnName: "id", onDelete: "SET NULL")]
+    private ?Menu $IdMenuParent = null;
+
+    #[ORM\OneToMany(mappedBy: 'IdMenuParent', targetEntity: Menu::class)]
+    private Collection $children;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $orden = null;
@@ -30,6 +36,11 @@ class Menu
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $language = null;
+
+    public function __construct()
+    {
+        $this->children = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -60,12 +71,12 @@ class Menu
         return $this;
     }
 
-    public function getIdMenuParent(): ?int
+    public function getIdMenuParent(): ?Menu
     {
         return $this->IdMenuParent;
     }
 
-    public function setIdMenuParent(?int $IdMenuParent): static
+    public function setIdMenuParent(?Menu $IdMenuParent): ?static
     {
         $this->IdMenuParent = $IdMenuParent;
 
@@ -106,5 +117,10 @@ class Menu
         $this->language = $language;
 
         return $this;
+    }
+
+    public function getChildren(): Collection
+    {
+        return $this->children;
     }
 }

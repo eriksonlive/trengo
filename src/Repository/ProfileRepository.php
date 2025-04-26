@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Menu;
+use App\Entity\Profile;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
@@ -15,20 +15,20 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Menu[]    findAll()
  * @method Menu[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MenuRepository extends ServiceEntityRepository
+class ProfileRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Menu::class);
+        parent::__construct($registry, Profile::class);
     }
 
-    public function getMenuPaginator(int $offset, int $limit, array $params = []): Paginator
+    public function getProfilePaginator(int $offset, int $limit, array $params = []): Paginator
     {
-        $sql = $this->createQueryBuilder('m');
+        $sql = $this->createQueryBuilder('p');
 
         $query = $sql->setFirstResult($offset)
             ->setMaxResults($limit)
-            ->orderBy('m.orden', 'ASC')
+            ->orderBy('p.id', 'ASC')
             ->getQuery();
 
         return new Paginator($query);

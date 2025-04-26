@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Functionality;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -21,28 +22,40 @@ class FunctionalityRepository extends ServiceEntityRepository
         parent::__construct($registry, Functionality::class);
     }
 
-//    /**
-//     * @return Functionality[] Returns an array of Functionality objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('f.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function getFuncPaginator(int $offset, int $limit, array $params = []): Paginator
+    {
+        $sql = $this->createQueryBuilder('m');
 
-//    public function findOneBySomeField($value): ?Functionality
-//    {
-//        return $this->createQueryBuilder('f')
-//            ->andWhere('f.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        $query = $sql->setFirstResult($offset)
+            ->setMaxResults($limit)
+            ->orderBy('m.id', 'ASC')
+            ->getQuery();
+
+        return new Paginator($query);
+    }
+
+    //    /**
+    //     * @return Functionality[] Returns an array of Functionality objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('f')
+    //            ->andWhere('f.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('f.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
+
+    //    public function findOneBySomeField($value): ?Functionality
+    //    {
+    //        return $this->createQueryBuilder('f')
+    //            ->andWhere('f.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }

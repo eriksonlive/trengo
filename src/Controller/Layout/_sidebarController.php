@@ -9,33 +9,31 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class _sidebarController extends AbstractController
 {
-    public function __construct()
-    {
-        // Constructor code here if needed
-    }
-
     #[Route('/_sidebar', name: 'app_sidebar')]
-    public function index(MenuRepository $menu): Response
+    public function index(MenuRepository $menuRepo): Response
     {
-        $rootMenu = $menu->findAll();
+        $rootMenu = $menuRepo->findBy(
+            ['IdMenuParent' => null],
+            ['orden' => 'ASC']
+        );
+
+        $allMenus = $menuRepo->findBy([], ['orden' => 'ASC']);
 
         $menuChildren = [];
-
-        foreach ($rootMenu as $menu) {
-            if (!empty($menu->getIdMenuParent())) {
-                $parentId = $menu->getIdMenuParent(); // importante: get el id real
-
-                if (!isset($menuChildren[$parentId])) {
-                    $menuChildren[$parentId] = [];
-                }
-                $menuChildren[$parentId][] = $menu;
+        foreach ($allMenus as $m) {
+            if ($m->getIdMenuParent()) {
+                $pid = $m->getIdMenuParent()->getId();
+                $menuChildren[$pid][] = $m;
             }
         }
 
-        // dump($menuChildren);
+        foreach ($menuChildren as &$children) {
+            usort($children, fn($a, $b) => (int)$a->getOrden() <=> (int)$b->getOrden());
+        }
+        unset($children);
 
         return $this->render('layout/_sidebar.html.twig', [
-            'menus' => $rootMenu,
+            'menus'        => $rootMenu,
             'menuChildren' => $menuChildren,
         ]);
     }

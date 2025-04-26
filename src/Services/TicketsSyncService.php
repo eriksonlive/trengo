@@ -67,8 +67,6 @@ class TicketsSyncService
         // Empieza desde la página que sigue a las ya cargadas
         $page = (int) floor($currentCount / $this->apiPageSize);
 
-        dump($page);
-
         $existingById = $this->ticketsRepo->getStatesMap();
 
         while ($currentCount < $required) {

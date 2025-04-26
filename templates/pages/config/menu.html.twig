@@ -1,0 +1,329 @@
+<div class="w-full m-4 p-4 relative overflow-x-auto shadow-md sm:rounded-lg space-y-4">
+	<div class="flex justify-between">
+		<h3 class="text-lg font-bold">Menu</h3>
+		<button data-open="createMenuModal" class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+			Nuevo
+		</button>
+	</div>
+
+	{# <form method="post" action="{{ path('create_menu') }}">
+																	<div class="pb-4 dark:bg-gray-900 flex flex-wrap gap-4 items-end mb-4">
+																		<div class="relative">
+																			<label for="item" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Item</label>
+																			<input type="text" id="item" name="item" value="" class="block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-40 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+																		</div>
+															
+																		<div class="relative">
+																			<label for="profile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Perfil</label>
+																			<div class="relative w-52">
+																				<select id="profile" name="profile" class="block py-2 px-3 pr-8 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none">
+																					<option value="" selected>Seleccione una opción</option>
+																					{% for profile in profiles %}
+																						<option value="{{ profile.id }}">{{ profile.name }}</option>
+																					{% endfor %}
+																				</select>
+																				<!-- Ícono personalizado -->
+																				<svg class="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+																					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+																				</svg>
+																			</div>
+																		</div>
+															
+																		<div class="relative">
+																			<label for="menu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Padre</label>
+																			<div class="relative w-52">
+																				<select id="menu" name="menu" class="block py-2 px-3 pr-8 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none">
+																					<option value="" selected>Seleccione una opción</option>
+																					{% for menu in menus %}
+																						<option value="{{ menu.id }}">{{ menu.menu }}</option>
+																					{% endfor %}
+																				</select>
+																				<!-- Ícono personalizado -->
+																				<svg class="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+																					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+																				</svg>
+																			</div>
+																		</div>
+															
+																		<div class="relative">
+																			<label for="func" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Funcion</label>
+																			<div class="relative w-52">
+																				<select id="func" name="functionality" class="block py-2 px-3 pr-8 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 appearance-none">
+																					<option value="" selected>Seleccione una opción</option>
+																					{% for function in func %}
+																						<option value="{{ function.id }}">{{ function.name }}</option>
+																					{% endfor %}
+																				</select>
+																				<!-- Ícono personalizado -->
+																				<svg class="w-5 h-5 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+																					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+																				</svg>
+																			</div>
+																		</div>
+															
+																		<div class="relative">
+																			<label for="orden" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Orden</label>
+																			<input type="text" id="orden" name="orden" class="block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-40 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
+																		</div>
+															
+																		<div>
+																			<input type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center" value="Crear"/>
+																		</div>
+																	</div>
+																</form> #}
+
+	{# {% include 'components/modal.html.twig' %} #}
+	<div class="pb-4 bg-white dark:bg-gray-900 flex justify-end">
+		<label for="table-search" class="sr-only">Buscar</label>
+		<div class="relative mt-1">
+			<div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+				<svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 20 20">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+				</svg>
+			</div>
+			<input type="text" id="table-search" class="block py-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Buscar">
+		</div>
+	</div>
+	<div class="overflow-x-auto">
+		<table class="min-w-full whitespace-nowrap text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<tr>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Menu
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Padre
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Perfil
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Funcionalidad
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Orden
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+					<th scope="col" class="px-6 py-3">
+						<div class="flex items-center">
+							Acciones
+							<a href="#">
+								<svg class="w-3 h-3 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewbox="0 0 24 24">
+									<path d="M8.574 11.024h6.852a2.075 2.075 0 0 0 1.847-1.086 1.9 1.9 0 0 0-.11-1.986L13.736 2.9a2.122 2.122 0 0 0-3.472 0L6.837 7.952a1.9 1.9 0 0 0-.11 1.986 2.074 2.074 0 0 0 1.847 1.086Zm6.852 1.952H8.574a2.072 2.072 0 0 0-1.847 1.087 1.9 1.9 0 0 0 .11 1.985l3.426 5.05a2.123 2.123 0 0 0 3.472 0l3.427-5.05a1.9 1.9 0 0 0 .11-1.985 2.074 2.074 0 0 0-1.846-1.087Z"/>
+								</svg>
+							</a>
+						</div>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for menu in menus %}
+					<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-300">
+						<td class="px-6 py-2">{{ menu.menu ?? '' }}</td>
+						<td class="px-6 py-2">{{ menu.idMenuParent ? menu.idMenuParent.menu : '' }}</td>
+						<td class="px-6 py-2">{{ menu.idProfile.name ?? '' }}</td>
+						<td class="px-6 py-2">{{ menu.IdFunctionality.router ?? '' }}</td>
+						<td class="px-6 py-2">{{ menu.orden ?? '' }}</td>
+						<td class="px-6 py-2 flex flex-row">
+							<button data-open="editMenuModal_{{ menu.id }}" type="button" class="bg-amber-500 text-amber-100 border border-amber-100 hover:bg-amber-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-amber-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
+								<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+									<path stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+								</svg>
+								<span class="sr-only">Icon description</span>
+							</button>
+							{% if menu.children|length == 0 %}
+								<button data-open="deleteMenuModal_{{ menu.id }}" type="button" class="bg-red-500 text-red-100 border border-red-100 hover:bg-red-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:focus:ring-red-800 dark:hover:bg-red-500">
+									<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+										<path stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+									</svg>
+
+									<span class="sr-only">Icon description</span>
+								</button>
+							{% endif %}
+						</td>
+					</tr>
+				{% else %}
+					<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+						<td colspan="5" class="text-center">No hay tickets disponibles.</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
+		<span class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">
+			Mostrando
+			<span class="font-semibold text-gray-900 dark:text-white">
+				{{ offset + 1 }}–{{ min(offset + itemsPerPage, totalCount) }}
+			</span>
+			de
+			<span class="font-semibold text-gray-900 dark:text-white">{{ totalCount }}</span>
+		</span>
+
+		<ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
+			{% if page > 1 %}
+				<li>
+					<a href="{{ path('config', params|merge({ page: page - 1 })) }}" class="px-3 h-8 flex items-center justify-center text-gray-500 border border-gray-300 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-s-lg">
+
+						Anterior
+					</a>
+				</li>
+			{% endif %}
+
+			<li>
+				<a href="{{ path('config', params|merge({ page: 1 })) }}" class="px-3 h-8 flex items-center justify-center {{ page == 1 ? 'text-blue-600 bg-blue-50 dark:bg-gray-700 dark:text-white' : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' }} border border-gray-300">
+
+					1
+				</a>
+			</li>
+
+			{% if page > 3 %}
+				<li>
+					<span class="px-3 h-8 flex items-center text-gray-500">...</span>
+				</li>
+			{% endif %}
+
+			{% for i in (page - 1)..(page + 1) %}
+				{% if i > 1 and i < totalPages %}
+					<li>
+						<a href="{{ path('config', params|merge({ page: i })) }}" class="px-3 h-8 flex items-center justify-center {{ page == i ? 'text-blue-600 bg-blue-50 dark:bg-gray-700 dark:text-white' : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' }} border border-gray-300">
+
+							{{ i }}
+						</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+
+			{% if page < totalPages - 2 %}
+				<li>
+					<span class="px-3 h-8 flex items-center text-gray-500">...</span>
+				</li>
+			{% endif %}
+
+			{% if totalPages > 1 %}
+				<li>
+					<a href="{{ path('config', params|merge({ page: totalPages })) }}" class="px-3 h-8 flex items-center justify-center {{ page == totalPages ? 'text-blue-600 bg-blue-50 dark:bg-gray-700 dark:text-white' : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white' }} border border-gray-300">
+
+						{{ totalPages }}
+					</a>
+				</li>
+			{% endif %}
+
+			{% if page < totalPages %}
+				<li>
+					<a href="{{ path('config', params|merge({ page: page + 1 })) }}" class="px-3 h-8 flex items-center justify-center text-gray-500 border border-gray-300 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-e-lg">
+
+						Siguiente
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</nav>
+</div>
+
+{% embed 'components/modal.html.twig' with {
+    modalId: 'createMenuModal',
+    title: 'Crear Nuevo item de Menu',
+} %}
+	{% block modal_body %}
+		{{ form_start(createForm, { attr: { id: 'createMenuForm' } }) }}
+		<div class="grid grid-cols-2 gap-4">
+			{{ form_row(createForm.menu) }}
+			{{ form_row(createForm.idProfile) }}
+			{{ form_row(createForm.idFunctionality) }}
+			{{ form_row(createForm.orden) }}
+			{{ form_row(createForm.idMenuParent) }}
+		</div>
+		{{ form_end(createForm) }}
+	{% endblock %}
+
+	{% block modal_footer %}
+		<button type="submit" form="createMenuForm" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+			Guardar
+		</button>
+		{{ parent() }}
+	{% endblock %}
+{% endembed %}
+
+{% for menu in menus %}
+	{% embed 'components/modal.html.twig' with {
+	    modalId: 'editMenuModal_' ~ menu.id,
+	    title: 'Editar item de Menu',
+	} %}
+		{% block modal_body %}
+			{{ form_start(editForms[menu.id], { attr: { id: 'editMenuForm_' ~ menu.id } }) }}
+
+			<div class="grid grid-cols-2 gap-4">
+				{{ form_row(editForms[menu.id].menu) }}
+				{{ form_row(editForms[menu.id].idProfile) }}
+				{{ form_row(editForms[menu.id].idFunctionality) }}
+				{{ form_row(editForms[menu.id].orden) }}
+				{{ form_row(editForms[menu.id].idMenuParent) }}
+			</div>
+
+			{{ form_end(editForms[menu.id]) }}
+		{% endblock %}
+
+		{% block modal_footer %}
+			<button type="submit" form="editMenuForm_{{ menu.id }}" class="text-white bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-amber-300 dark:focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+				Actualizar
+			</button>
+			{{ parent() }}
+		{% endblock %}
+	{% endembed %}
+{% endfor %}
+
+{% for menu in menus %}
+	{% embed 'components/modal.html.twig' with {
+	    modalId: 'deleteMenuModal_' ~ menu.id,
+	    title: 'Eliminar item de Menu',
+	} %}
+		{% block modal_body %}
+			{{ form_start(deleteForms[menu.id], { attr: { id: 'deleteMenuForm_' ~ menu.id } }) }}
+			Desea eliminar el Item
+			{{ menu.menu }}?
+			{{ form_end(deleteForms[menu.id]) }}
+		{% endblock %}
+
+		{% block modal_footer %}
+			<button type="submit" form="deleteMenuForm_{{ menu.id }}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+				Eliminar
+			</button>
+			{{ parent() }}
+		{% endblock %}
+	{% endembed %}
+{% endfor %}

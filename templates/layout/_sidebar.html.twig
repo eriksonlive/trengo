@@ -11,11 +11,11 @@
 
 	<!-- Sidebar -->
 	<div :class="[
-					sidebarOpen ? 'translate-x-0' : '-translate-x-full',
-					'transform w-60 transition-all duration-300 fixed top-0 left-0 bottom-0 z-50 bg-white overflow-visible',
-					expanded ? 'lg:w-64' : 'lg:w-14',
-					'lg:translate-x-0 lg:static'
-				]">
+																																																								sidebarOpen ? 'translate-x-0' : '-translate-x-full',
+																																																								'transform w-60 transition-all duration-300 fixed top-0 left-0 bottom-0 z-50 bg-white overflow-visible',
+																																																								expanded ? 'lg:w-64' : 'lg:w-14',
+																																																								'lg:translate-x-0 lg:static'
+																																																							]">
 		<div
 			class="relative flex flex-col h-full max-h-full">
 			<!-- Header -->
@@ -56,15 +56,39 @@
 							{% if (menu.idFunctionality is not empty and menu.IdMenuParent is null) %}
 								<li class="relative">
 									<div class="group">
-										<a class="flex items-center gap-x-3.5 py-2 px-2.5 text-gray-800 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white" href="#">
-											<svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
-												<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-												<polyline points="9 22 9 12 15 12 15 22"/>
-											</svg>
-											<div :class="expanded ? 'block' : 'hidden'" class="text-sm text-gray-800 dark:text-neutral-200">
-												{{ menu.menu }}
-											</div>
-										</a>
+										{% set link = menu.idFunctionality.router %}
+
+										{% if link starts with 'http://' or link starts with 'https://' %}
+											<a href="{{ link }}" class="flex items-center gap-x-3.5 py-2 px-2.5 text-gray-800 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white" target="_blank" rel="noopener noreferrer">
+												<svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+													<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+													<polyline points="9 22 9 12 15 12 15 22"/>
+												</svg>
+												<div :class="expanded ? 'block' : 'hidden'" class="text-sm text-gray-800 dark:text-neutral-200">
+													{{ menu.menu }}
+												</div>
+											</a>
+										{% elseif '/' in link %}
+											<a href="{{ link }}" class="flex items-center gap-x-3.5 py-2 px-2.5 text-gray-800 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white">
+												<svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+													<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+													<polyline points="9 22 9 12 15 12 15 22"/>
+												</svg>
+												<div :class="expanded ? 'block' : 'hidden'" class="text-sm text-gray-800 dark:text-neutral-200">
+													{{ menu.menu }}
+												</div>
+											</a>
+										{% else %}
+											<a href="{{ path(link) }}" class="flex items-center gap-x-3.5 py-2 px-2.5 text-gray-800 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white">
+												<svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
+													<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+													<polyline points="9 22 9 12 15 12 15 22"/>
+												</svg>
+												<div :class="expanded ? 'block' : 'hidden'" class="text-sm text-gray-800 dark:text-neutral-200">
+													{{ menu.menu }}
+												</div>
+											</a>
+										{% endif %}
 										<div x-show="!expanded" class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-2 py-1 bg-gray-700 text-white text-xs rounded shadow opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-50">
 											{{ menu.menu }}
 										</div>
@@ -72,8 +96,7 @@
 								</li>
 							{% endif %}
 
-							{% if(menu.IdMenuParent is null) %}
-
+							{% if(menu.IdMenuParent is null and menu.idFunctionality is empty) %}
 								<li x-data="{ open: false }" class="relative">
 									<div class="group">
 										<button @click="open = !open" type="button" class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:text-neutral-200">
@@ -108,9 +131,22 @@
 												{% for child in menuChildren[menu.id]|default([]) %}
 													{% if child.idfunctionality %}
 														<li>
-															<a href="{{ child.idFunctionality.router }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">
-																{{ child.menu }}
-															</a>
+															{% set link = child.idFunctionality.router %}
+
+															{% if link starts with 'http://' or link starts with 'https://' %}
+
+																<a href="{{ link }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700" target="_blank" rel="noopener noreferrer">
+																	{{ child.menu }}
+																</a>
+															{% elseif '/' in link %}
+																<a href="{{ link }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">
+																	{{ child.menu }}
+																</a>
+															{% else %}
+																<a href="{{ path(link) }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">
+																	{{ child.menu }}
+																</a>
+															{% endif %}
 														</li>
 													{% else %}
 														<li x-data="{ open: false }">
@@ -124,7 +160,14 @@
 																	{% for grandchild in menuChildren[child.id]|default([]) %}
 																		{% if grandchild.idfunctionality %}
 																			<li>
-																				<a href="{{ grandchild.idFunctionality.router }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">{{ grandchild.menu }}</a>
+																				{% set link = grandchild.idFunctionality.router %}
+																				{% if link starts with 'http://' or link starts with 'https://' %}
+																					<a href="{{ link }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700" target="_blank" rel="noopener noreferrer">{{ grandchild.menu }}</a>
+																				{% elseif '/' in link %}
+																					<a href="{{ link }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">{{ grandchild.menu }}</a>
+																				{% else %}
+																					<a href="{{ path(link) }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700">{{ grandchild.menu }}</a>
+																				{% endif %}
 																			</li>
 																		{% else %}
 																			<span class="text-xs text-gray-500 dark:text-gray-400">Falta idfunctionality</span>
@@ -147,9 +190,21 @@
 												{% for child in menuChildren[menu.id]|default([]) %}
 													{% if child.idfunctionality %}
 														<li>
-															<a href="{{ child.idfunctionality.router }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">
-																{{ child.menu }}
-															</a>
+															{% set link = child.idFunctionality.router %}
+
+															{% if link starts with 'http://' or link starts with 'https://' %}
+																<a href="{{ link }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200" target="_blank" rel="noopener noreferrer">
+																	{{ child.menu }}
+																</a>
+															{% elseif '/' in link %}
+																<a href="{{ link }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">
+																	{{ child.menu }}
+																</a>
+															{% else %}
+																<a href="{{ path(link) }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">
+																	{{ child.menu }}
+																</a>
+															{% endif %}
 														</li>
 													{% else %}
 														<!-- Submenú anidado -->
@@ -165,7 +220,15 @@
 																	{% for grandchild in menuChildren[child.id]|default([]) %}
 																		{% if grandchild.idfunctionality %}
 																			<li>
-																				<a href="{{ grandchild.idfunctionality.router }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">{{ grandchild.menu }}</a>
+																				{% set link = grandchild.idFunctionality.router %}
+
+																				{% if link starts with 'http://' or link starts with 'https://' %}
+																					<a href="{{ link }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200" target="_blank" rel="noopener noreferrer">{{ grandchild.menu }}</a>
+																				{% elseif '/' in link %}
+																					<a href="{{ link }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">{{ grandchild.menu }}</a>
+																				{% else %}
+																					<a href="{{ path(link) }}" class="block py-2 px-2.5 text-sm rounded-lg hover:bg-gray-100 dark:text-neutral-200">{{ grandchild.menu }}</a>
+																				{% endif %}
 																			</li>
 																		{% else %}
 																			<!-- Si necesitas más niveles, aquí puedes repetir el patrón -->
