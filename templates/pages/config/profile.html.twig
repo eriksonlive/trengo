@@ -146,11 +146,11 @@
 
 {% embed 'components/modal.html.twig' with {
     modalId: 'createProfileModal',
-    title: 'Crear Nueva Funcionalidad'
+    title: 'Crear Nuevo Perfil'
 } %}
 	{% block modal_body %}
 		{{ form_start(createForm, { attr: { id: 'createProfileForm' } }) }}
-		<div class="flex flex-row space-x-4">
+		<div class="grid grid-cols-2 gap-4">
 			{{ form_row(createForm.name) }}
 		</div>
 		{{ form_end(createForm) }}
@@ -173,7 +173,7 @@
 		{% block modal_body %}
 			{{ form_start(editForms[profile.id], { attr: { id: 'editProfileForm_' ~ profile.id } }) }}
 
-			<div class="flex flex-row space-x-4">
+			<div class="grid grid-cols-2 gap-4">
 				{{ form_row(editForms[profile.id].name) }}
 			</div>
 

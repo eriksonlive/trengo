@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Menu;
+use App\Entity\Profile;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Persistence\ManagerRegistry;
@@ -22,16 +23,46 @@ class MenuRepository extends ServiceEntityRepository
         parent::__construct($registry, Menu::class);
     }
 
-    public function getMenuPaginator(int $offset, int $limit, array $params = []): Paginator
+    public function getMenuPaginator(int $offset, int $limit, Profile $profile): Paginator
     {
         $sql = $this->createQueryBuilder('m');
 
         $query = $sql->setFirstResult($offset)
+            ->innerJoin('m.idProfile', 'p')
+            ->andWhere('p.id = :profile')
+            ->setParameter('profile', $profile ?? null)
             ->setMaxResults($limit)
             ->orderBy('m.orden', 'ASC')
             ->getQuery();
 
         return new Paginator($query);
+    }
+
+    public function findRootByProfile(Profile $profile): array
+    {
+        return $this->createQueryBuilder('m')
+            // Une a la propiedad idProfile (no idprofile)
+            ->innerJoin('m.idProfile', 'p')
+            ->andWhere('p = :profile')
+            ->andWhere('m.IdMenuParent IS NULL')
+            ->setParameter('profile', $profile)
+            ->orderBy('m.orden', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * @return Menu[]
+     */
+    public function findAllByProfile(Profile $profile): array
+    {
+        return $this->createQueryBuilder('m')
+            ->innerJoin('m.idProfile', 'p')
+            ->andWhere('p = :profile')
+            ->setParameter('profile', $profile)
+            ->orderBy('m.orden', 'ASC')
+            ->getQuery()
+            ->getResult();
     }
 
     //    /**

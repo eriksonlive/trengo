@@ -18,7 +18,7 @@ class ProfileController extends AbstractController
     {
         $params = array_filter(
             $request->attributes->all(),
-            fn($k) => 0 !== strpos($k, '_'),     // filtrar claves internas si quieres
+            fn($k) => 0 !== strpos($k, '_'),
             \ARRAY_FILTER_USE_KEY
         );
 
@@ -29,7 +29,6 @@ class ProfileController extends AbstractController
         $totalCount = count($paginator);
         $totalPages = (int) ceil($totalCount / $itemPerPage);
 
-        // — FORMULARIO de CREACIÓN —
         $newFunc = new Profile();
         $createForm = $this->createForm(CreateProfileType::class, $newFunc, [
             'action' => $this->generateUrl('create_profile'),

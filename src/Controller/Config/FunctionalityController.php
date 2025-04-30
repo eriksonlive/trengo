@@ -31,7 +31,6 @@ class FunctionalityController extends AbstractController
         $totalCount  = count($paginator);
         $totalPages  = (int) ceil($totalCount / $itemPerPage);
 
-        // — FORMULARIO de CREACIÓN —
         $newFunc = new Functionality();
         $createForm = $this->createForm(CreateFunctionalityType::class, $newFunc, [
             'action' => $this->generateUrl('create_functionality'),

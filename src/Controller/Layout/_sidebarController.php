@@ -3,21 +3,36 @@
 namespace App\Controller\Layout;
 
 use App\Repository\MenuRepository;
+use App\Repository\ProfileRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class _sidebarController extends AbstractController
 {
-    #[Route('/_sidebar', name: 'app_sidebar')]
-    public function index(MenuRepository $menuRepo): Response
-    {
-        $rootMenu = $menuRepo->findBy(
-            ['IdMenuParent' => null],
-            ['orden' => 'ASC']
-        );
 
-        $allMenus = $menuRepo->findBy([], ['orden' => 'ASC']);
+    private RequestStack $rs;
+    private MenuRepository $menuRepo;
+    private ProfileRepository $profileRepo;
+
+    public function __construct(RequestStack $rs, MenuRepository $menuRepo, ProfileRepository $profileRepo)
+    {
+        $this->menuRepo = $menuRepo;
+        $this->profileRepo = $profileRepo;
+        $this->rs = $rs;
+    }
+
+    #[Route('/_sidebar', name: 'app_sidebar')]
+    public function index(): Response
+    {
+        $session   = $this->rs->getCurrentRequest()->getSession();
+        $profileId = $session->get('profile_id');
+
+        $profile = $this->profileRepo->find($profileId);
+
+        // $rootMenu = $this->menuRepo->findRootByProfile($profile);
+        $allMenus = $this->menuRepo->findAllByProfile($profile);
 
         $menuChildren = [];
         foreach ($allMenus as $m) {
@@ -33,7 +48,7 @@ class _sidebarController extends AbstractController
         unset($children);
 
         return $this->render('layout/_sidebar.html.twig', [
-            'menus'        => $rootMenu,
+            'menus'        => $allMenus,
             'menuChildren' => $menuChildren,
         ]);
     }

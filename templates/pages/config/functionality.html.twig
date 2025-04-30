@@ -157,9 +157,11 @@
 } %}
 	{% block modal_body %}
 		{{ form_start(createForm, { attr: { id: 'createFuncForm' } }) }}
-		<div class="flex flex-row space-x-4">
+		<div class="grid grid-cols-2 gap-4">
 			{{ form_row(createForm.name) }}
 			{{ form_row(createForm.router) }}
+			{{ form_row(createForm.varGet) }}
+			{{ form_row(createForm.varPost) }}
 		</div>
 		{{ form_end(createForm) }}
 	{% endblock %}
@@ -181,9 +183,11 @@
 		{% block modal_body %}
 			{{ form_start(editForms[func.id], { attr: { id: 'editFuncForm_' ~ func.id } }) }}
 
-			<div class="flex flex-row space-x-4">
+			<div class="grid grid-cols-2 gap-4">
 				{{ form_row(editForms[func.id].name) }}
 				{{ form_row(editForms[func.id].router) }}
+				{{ form_row(editForms[func.id].varGet) }}
+				{{ form_row(editForms[func.id].varPost) }}
 			</div>
 
 			{{ form_end(editForms[func.id]) }}

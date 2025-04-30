@@ -13,22 +13,33 @@ class CreateFunctionalityType extends AbstractType
     {
         $builder
             ->add('name', null, [
+                'label' => 'Nombre',
                 'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
                 'attr' => [
                     'class' => 'block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 ]
             ])
             ->add('router', null, [
+                'label' => 'Ruta',
                 'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
                 'attr' => [
                     'class' => 'block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
                 ]
             ])
-            // ->add('save', SubmitType::class, [
-            //     'label' => 'Guardar',
-            //     'attr'  => ['class' => 'bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600'],
-            // ])
-        ;
+            ->add('varGet', null, [
+                'label' => 'Variables GET',
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
+                'attr' => [
+                    'class' => 'block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                ]
+            ])
+            ->add('varPost', null, [
+                'label' => 'Variables POST',
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
+                'attr' => [
+                    'class' => 'block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+                ]
+            ]);;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

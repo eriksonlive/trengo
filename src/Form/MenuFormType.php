@@ -36,6 +36,7 @@ class MenuFormType extends AbstractType
             // ])
             ->add('idProfile', EntityType::class, [
                 'class' => Profile::class,
+                'label' => 'Perfil',
                 'choice_label' => 'name',
                 'placeholder' => 'Seleccione un perfil',
                 'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
@@ -45,6 +46,7 @@ class MenuFormType extends AbstractType
             ])
             ->add('idFunctionality', EntityType::class, [
                 'required' => false,
+                'label' => 'Funcionalidad',
                 'class' => Functionality::class,
                 'choice_label' => 'name',
                 'placeholder'  => 'Seleccione un perfil',
@@ -55,6 +57,7 @@ class MenuFormType extends AbstractType
             ])
             ->add('idMenuParent', EntityType::class, [
                 'required' => false,
+                'label' => 'Menu Padre',
                 'class' => Menu::class,
                 'choice_label' => 'menu',
                 'placeholder' => 'Seleccione un perfil',
