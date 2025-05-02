@@ -23,15 +23,17 @@ class MenuRepository extends ServiceEntityRepository
         parent::__construct($registry, Menu::class);
     }
 
-    public function getMenuPaginator(int $offset, int $limit, Profile $profile): Paginator
+    public function getMenuPaginator(int $offset, int $limit, ?int $profile): Paginator
     {
         $sql = $this->createQueryBuilder('m');
 
         $query = $sql->setFirstResult($offset)
-            ->innerJoin('m.idProfile', 'p')
-            ->andWhere('p.id = :profile')
-            ->setParameter('profile', $profile ?? null)
-            ->setMaxResults($limit)
+            ->innerJoin('m.profile', 'p');
+        if ($profile) {
+            $sql->andWhere('p.id = :profile')
+                ->setParameter('profile', $profile);
+        }
+        $sql->setMaxResults($limit)
             ->orderBy('m.orden', 'ASC')
             ->getQuery();
 
@@ -41,8 +43,8 @@ class MenuRepository extends ServiceEntityRepository
     public function findRootByProfile(Profile $profile): array
     {
         return $this->createQueryBuilder('m')
-            // Une a la propiedad idProfile (no idprofile)
-            ->innerJoin('m.idProfile', 'p')
+            // Une a la propiedad profile (no profile)
+            ->innerJoin('m.profile', 'p')
             ->andWhere('p = :profile')
             ->andWhere('m.IdMenuParent IS NULL')
             ->setParameter('profile', $profile)
@@ -57,7 +59,7 @@ class MenuRepository extends ServiceEntityRepository
     public function findAllByProfile(Profile $profile): array
     {
         return $this->createQueryBuilder('m')
-            ->innerJoin('m.idProfile', 'p')
+            ->innerJoin('m.profile', 'p')
             ->andWhere('p = :profile')
             ->setParameter('profile', $profile)
             ->orderBy('m.orden', 'ASC')

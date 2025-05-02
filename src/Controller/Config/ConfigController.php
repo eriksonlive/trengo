@@ -21,18 +21,31 @@ class ConfigController extends AbstractController
 
         $session = $request->getSession();
 
-        // $session->set('profile_id', 1);
         if ($request->query->get('profile_id')) {
             $session->set('profile_id', (int)$request->query->get('profile_id'));
-
             return $this->redirectToRoute('config');
         }
 
-        $profileId = $profile->find($session->get('profile_id'));
-        if ($profileId) {
-            $session->set('profile_id', $profileId->getId());
-        } else {
-            $session->set('profile_id', 1);
+        $storedProfileId = $session->get('profile_id');
+
+        if ($storedProfileId === null) {
+            $storedProfileId = 0;
+            $session->set('profile_id', $storedProfileId);
+        }
+
+        $profileEntity = null;
+
+        if ($storedProfileId > 0) {
+            $profileEntity = $profile->find($storedProfileId);
+        }
+
+        if (!$profileEntity) {
+            $firstProfile = $profile->findOneBy([], ['id' => 'ASC']);
+            if ($firstProfile) {
+                $session->set('profile_id', $firstProfile->getId());
+            } else {
+                $session->set('profile_id', 0);
+            }
         }
 
         $profiles = $profile->findAll();

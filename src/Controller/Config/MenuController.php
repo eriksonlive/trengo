@@ -3,7 +3,6 @@
 namespace App\Controller\Config;
 
 use App\Entity\Menu;
-use App\Entity\Profile;
 use App\Form\MenuFormType;
 use App\Repository\FunctionalityRepository;
 use App\Repository\MenuRepository;
@@ -32,15 +31,18 @@ class MenuController extends AbstractController
             \ARRAY_FILTER_USE_KEY
         );
 
-        $session   = $rs->getCurrentRequest()->getSession();
-        $profileId = $session->get('profile_id');
-
-        $profile = $profileRepo->find($profileId);
+        $session = $rs->getCurrentRequest()->getSession();
+        $profile = $session->get('profile_id');
 
         $itemPerPage = 5;
         $page = max(1, $request->attributes->get('page', 1));
         $offset = ($page - 1) * $itemPerPage;
-        $paginator = $menu->getMenuPaginator($offset, $itemPerPage, $profile);
+
+        if (!$profile) {
+            $paginator = $menu->getMenuPaginator($offset, $itemPerPage, null);
+        } else {
+            $paginator = $menu->getMenuPaginator($offset, $itemPerPage, $profile);
+        }
         $totalCount = count($paginator);
         $totalPages = (int) ceil($totalCount / $itemPerPage);
 

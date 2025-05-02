@@ -77,8 +77,8 @@
 					<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-300">
 						<td class="px-6 py-2">{{ menu.menu ?? '' }}</td>
 						<td class="px-6 py-2">{{ menu.idMenuParent ? menu.idMenuParent.menu : '' }}</td>
-						<td class="px-6 py-2">{{ menu.idProfile.name ?? '' }}</td>
-						<td class="px-6 py-2">{{ menu.IdFunctionality.router ?? '' }}</td>
+						<td class="px-6 py-2">{{ menu.profile.name ?? '' }}</td>
+						<td class="px-6 py-2">{{ menu.functionality.name ?? '' }}</td>
 						<td class="px-6 py-2">{{ menu.orden ?? '' }}</td>
 						<td class="px-6 py-2 flex flex-row">
 							<button data-open="editMenuModal_{{ menu.id }}" type="button" class="bg-amber-500 text-amber-100 border border-amber-100 hover:bg-amber-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-amber-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
@@ -185,8 +185,8 @@
 		{{ form_start(createForm, { attr: { id: 'createMenuForm' } }) }}
 		<div class="grid grid-cols-2 gap-4">
 			{{ form_row(createForm.menu) }}
-			{{ form_row(createForm.idProfile) }}
-			{{ form_row(createForm.idFunctionality) }}
+			{{ form_row(createForm.profile) }}
+			{{ form_row(createForm.functionality) }}
 			{{ form_row(createForm.orden) }}
 			{{ form_row(createForm.idMenuParent) }}
 		</div>
@@ -211,8 +211,8 @@
 
 			<div class="grid grid-cols-2 gap-4">
 				{{ form_row(editForms[menu.id].menu) }}
-				{{ form_row(editForms[menu.id].idProfile) }}
-				{{ form_row(editForms[menu.id].idFunctionality) }}
+				{{ form_row(editForms[menu.id].profile) }}
+				{{ form_row(editForms[menu.id].functionality) }}
 				{{ form_row(editForms[menu.id].orden) }}
 				{{ form_row(editForms[menu.id].idMenuParent) }}
 			</div>

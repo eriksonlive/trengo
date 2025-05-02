@@ -35,23 +35,26 @@ class ProfileController extends AbstractController
             'method' => 'POST',
         ]);
 
-        foreach ($paginator as $func) {
-            $editForms[$func->getId()] = $this->createForm(CreateProfileType::class, $func, [
-                'action' => $this->generateUrl('edit_profile', ['id' => $func->getId()]),
-                'method' => 'POST',
-            ])->createView();
-        }
+        if(!empty($paginator)) {
 
-        foreach ($paginator as $func) {
-            $deleteForms[$func->getId()] = $this->createFormBuilder(null, [
-                'csrf_protection' => true,
-                'csrf_field_name' => '_token',
-                'csrf_token_id'   => 'delete' . $func->getId(),
-            ])
-                ->setAction($this->generateUrl('delete_profile', ['id' => $func->getId()]))
-                ->setMethod('POST')
-                ->getForm()
-                ->createView();
+            foreach ($paginator as $func) {
+                $editForms[$func->getId()] = $this->createForm(CreateProfileType::class, $func, [
+                    'action' => $this->generateUrl('edit_profile', ['id' => $func->getId()]),
+                    'method' => 'POST',
+                ])->createView();
+            }
+    
+            foreach ($paginator as $func) {
+                $deleteForms[$func->getId()] = $this->createFormBuilder(null, [
+                    'csrf_protection' => true,
+                    'csrf_field_name' => '_token',
+                    'csrf_token_id'   => 'delete' . $func->getId(),
+                ])
+                    ->setAction($this->generateUrl('delete_profile', ['id' => $func->getId()]))
+                    ->setMethod('POST')
+                    ->getForm()
+                    ->createView();
+            }
         }
 
         return $this->render('pages/config/profile.html.twig', [
@@ -63,8 +66,8 @@ class ProfileController extends AbstractController
             'itemsPerPage' => $itemPerPage,
             'params' => $params,
             'createForm' => $createForm->createView(),
-            'editForms' => $editForms,
-            'deleteForms' => $deleteForms,
+            'editForms' => $editForms ?? [],
+            'deleteForms' => $deleteForms ?? [],
         ]);
     }
 

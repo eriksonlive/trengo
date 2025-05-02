@@ -27,7 +27,7 @@ class Functionality
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $varPost = null;
 
-    #[ORM\OneToMany(targetEntity: Menu::class, mappedBy: 'idFunctionality')]
+    #[ORM\OneToMany(targetEntity: Menu::class, mappedBy: 'functionality')]
     private Collection $menus;
 
     public function __construct()
@@ -100,7 +100,7 @@ class Functionality
     {
         if (!$this->menus->contains($menu)) {
             $this->menus->add($menu);
-            $menu->setIdFunctionality($this);
+            $menu->setFunctionality($this);
         }
 
         return $this;
@@ -110,8 +110,8 @@ class Functionality
     {
         if ($this->menus->removeElement($menu)) {
             // set the owning side to null (unless already changed)
-            if ($menu->getIdFunctionality() === $this) {
-                $menu->setIdFunctionality(null);
+            if ($menu->getFunctionality() === $this) {
+                $menu->setFunctionality(null);
             }
         }
 

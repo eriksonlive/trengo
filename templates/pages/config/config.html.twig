@@ -9,9 +9,11 @@
 	<div class="flex justify-end w-full p-4 relative overflow-x-auto sm:rounded-lg">
 		<form action="config" method="get">
 			<select name="profile_id" onchange="if (this.value) this.form.submit()" class="block py-2 ps-3 text-sm text-gray-900 border border-gray-300 rounded-lg w-auto bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-				<option value="">Seleccione un usuario</option>
+				<option {% if profile_id is empty %} selected {% endif %}>Seleccione un usuario</option>
 				{% for profile in profiles %}
 					<option value="{{ profile.id }}" {% if profile_id == profile.id %} selected {% endif %}>{{ profile.name }}</option>
+				{% else %}
+					<option value="">No hay usuarios</option>
 				{% endfor %}
 			</select>
 		</form>

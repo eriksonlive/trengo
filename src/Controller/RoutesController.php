@@ -47,42 +47,48 @@ class RoutesController extends AbstractController
         $totalPages = (int) ceil($totalCount / $itemsPerPage);
 
         return $this->render('pages/trengo/tickets.html.twig', [
-            'tickets'     => $paginator,
-            'totalCount'  => $totalCount,
-            'totalPages'  => $totalPages,
-            'offset'      => $offset,
-            'page'        => $page,
+            'tickets' => $paginator,
+            'totalCount' => $totalCount,
+            'totalPages' => $totalPages,
+            'offset' => $offset,
+            'page' => $page,
             'itemsPerPage' => $itemsPerPage,
-            'filters'     => [
-                'status'     => $request->query->get('status'),
+            'filters' => [
+                'status' => $request->query->get('status'),
                 'date_start' => $request->query->get('date_start'),
-                'date_end'   => $request->query->get('date_end'),
+                'date_end' => $request->query->get('date_end'),
+                'search' => $request->query->get('search'),
             ],
         ]);
     }
 
-    #[Route('/allmessage', name: 'all_messages')]
+    #[Route('/allmessage/{id}', name: 'all_messages')]
     public function fetchTickets(Request $request)
     {
-        // Obtener parámetros desde la URL
-        $page = $request->query->get('page', 1); // Valor por defecto: 1
-        $labels = $request->query->all('labels', 1645368); // Array de etiquetas
-        $sort = $request->query->get('sort', '-date'); // Valor por defecto: -date
-
-        $ticket_id = 839278382;
-
-        // Construir los parámetros
-        $queryParams = [
-            'page' => $page,
-            'labels' => $labels,
-            'sort' => $sort,
-        ];
+        $ticket_id = $request->attributes->get('id');
 
         $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages');
 
-        dump($data);
+        // dump($data['data']);
 
-        return $this->render('/pages/trengo/allmessages.html.twig');
+        return $this->render('/pages/trengo/allmessages.html.twig', [
+            'messages' => $data ? $data['data'] : [],
+        ]);
+    }
+
+    #[Route('/message/{ticket_id}/{message_id}', name: 'message')]
+    public function fetchMessage(Request $request)
+    {
+        $ticket_id = $request->attributes->get('ticket_id'); // Obtener el ID del ticket desde la URL
+        $message_id = $request->attributes->get('message_id'); // Obtener el ID del ticket desde la URL
+
+        $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages/' . $message_id);
+
+        // dump($data);
+
+        return $this->render('/pages/trengo/message.html.twig', [
+            'message' => $data ? $data : [],
+        ]);
     }
 
     #[Route('tickets/{ticket_id}/messages', name: 'ticket', methods: ['GET'])]
@@ -90,7 +96,7 @@ class RoutesController extends AbstractController
     {
         $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages');
 
-        dump($data);
+        // dump($data);
 
         return new JsonResponse($data);
     }

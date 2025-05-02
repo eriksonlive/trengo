@@ -53,10 +53,10 @@
 							class="space-y-1">
 							<!-- Dashboard -->
 
-							{% if (menu.idFunctionality is not empty and menu.IdMenuParent is null) %}
+							{% if (menu.functionality is not empty and menu.IdMenuParent is null) %}
 								<li class="relative">
 									<div class="group" x-data="{ showTip: false }">
-										{% set link, href, target, rel = menu.idFunctionality.router, '', false, false %}
+										{% set link, href, target, rel = menu.functionality.router, '', false, false %}
 
 										{% if link starts with 'http://' or link starts with 'https://' %}
 											{% set href, target, rel = link,'_blank', 'noopener noreferrer' %}
@@ -81,7 +81,7 @@
 								</li>
 							{% endif %}
 
-							{% if(menu.IdMenuParent is null and menu.idFunctionality is empty) %}
+							{% if(menu.IdMenuParent is null and menu.functionality is empty) %}
 								<li x-data="{ open: false }" class="relative">
 									<div class="group" x-data="{ showTip: false }">
 										<button @click="open = !open" @mouseenter="showTip = true" @mouseleave="showTip = false" type="button" class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:text-neutral-200">
@@ -114,9 +114,9 @@
 										<div x-show="open" @click.outside="open = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-x-1" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 translate-x-1" x-cloak class="absolute left-full top-5 mt-2 w-48 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded shadow-lg z-50">
 											<ul class="py-1 text-sm text-gray-700 dark:text-neutral-200">
 												{% for child in menuChildren[menu.id]|default([]) %}
-													{% if child.idfunctionality %}
+													{% if child.functionality %}
 														<li>
-															{% set link, href, target, rel = child.idFunctionality.router, '', false, false %}
+															{% set link, href, target, rel = child.functionality.router, '', false, false %}
 															{% if link starts with 'http://' or link starts with 'https://' %}
 																{% set href, target, rel = link,'_blank', 'noopener noreferrer' %}
 															{% elseif link starts with '/' or '/' in link or link ends with '.php' %}
@@ -139,9 +139,9 @@
 															<div x-show="open" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-96" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="max-h-96" x-transition:leave-end="max-h-0" x-cloak class="ps-5 overflow-hidden">
 																<ul class="py-1">
 																	{% for grandchild in menuChildren[child.id]|default([]) %}
-																		{% if grandchild.idfunctionality %}
+																		{% if grandchild.functionality %}
 																			<li>
-																				{% set link, href, target, rel = grandchild.idFunctionality.router, '', false, false %}
+																				{% set link, href, target, rel = grandchild.functionality.router, '', false, false %}
 																				{% if link starts with 'http://' or link starts with 'https://' %}
 																					{% set href, target, rel = link,'_blank', 'noopener noreferrer' %}
 																				{% elseif link starts with '/' or '/' in link or link ends with '.php' %}
@@ -152,7 +152,7 @@
 																				<a href="{{ href }}" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-neutral-700" {% if target %} target="{{ target }}" {% endif %} {% if rel %} rel="{{ rel }}" {% endif %}>{{ grandchild.menu }}</a>
 																			</li>
 																		{% else %}
-																			<span class="text-xs text-gray-500 dark:text-gray-400">Falta idfunctionality</span>
+																			<span class="text-xs text-gray-500 dark:text-gray-400">Falta functionality</span>
 																		</ul>
 																	{% endif %}
 																{% endfor %}
@@ -170,9 +170,9 @@
 											<ul class="pt-1 space-y-1">
 
 												{% for child in menuChildren[menu.id]|default([]) %}
-													{% if child.idfunctionality %}
+													{% if child.functionality %}
 														<li>
-															{% set link, href, target, rel = child.idFunctionality.router, '', false, false %}
+															{% set link, href, target, rel = child.functionality.router, '', false, false %}
 															{% if link starts with 'http://' or link starts with 'https://' %}
 																{% set href, target, rel = link,'_blank', 'noopener noreferrer' %}
 															{% elseif link starts with '/' or '/' in link or link ends with '.php' %}
@@ -196,9 +196,9 @@
 															<div x-show="open" x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="max-h-0" x-transition:enter-end="max-h-96" x-transition:leave="transition-all ease-in-out duration-300" x-transition:leave-start="max-h-96" x-transition:leave-end="max-h-0" x-cloak class="ps-5 overflow-hidden">
 																<ul class="pt-1 space-y-1">
 																	{% for grandchild in menuChildren[child.id]|default([]) %}
-																		{% if grandchild.idfunctionality %}
+																		{% if grandchild.functionality %}
 																			<li>
-																				{% set link, href, target, rel = grandchild.idFunctionality.router, '', false, false %}
+																				{% set link, href, target, rel = grandchild.functionality.router, '', false, false %}
 																				{% if link starts with 'http://' or link starts with 'https://' %}
 																					{% set href, target, rel = link,'_blank', 'noopener noreferrer' %}
 																				{% elseif link starts with '/' or '/' in link or link ends with '.php' %}
@@ -211,7 +211,7 @@
 																		{% else %}
 																			<!-- Si necesitas más niveles, aquí puedes repetir el patrón -->
 																			<li>
-																				<span class="text-xs text-gray-500 dark:text-gray-400">Falta idfunctionality</span>
+																				<span class="text-xs text-gray-500 dark:text-gray-400">Falta functionality</span>
 																			</li>
 																		{% endif %}
 																	{% endfor %}

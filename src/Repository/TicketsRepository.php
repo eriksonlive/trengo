@@ -42,6 +42,11 @@ class TicketsRepository extends ServiceEntityRepository
                 ->setParameter('endDate', new \DateTime($params['date_end']));
         }
 
+        if (isset($params['search']) && !empty($params['search'])) {
+            $sql->andWhere('LOWER(t.subject) LIKE :search')
+                ->setParameter('search', '%' . strtolower($params['search']) . '%');
+        }
+
         $query = $sql->setFirstResult($offset)
             ->setMaxResults($limit)
             ->orderBy('t.id', 'DESC')

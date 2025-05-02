@@ -16,10 +16,10 @@ class Menu
     private ?int $id = null;
 
     #[ORM\ManyToOne(inversedBy: 'menus')]
-    private ?Profile $idProfile = null;
+    private ?Profile $profile = null;
 
     #[ORM\ManyToOne(inversedBy: 'menus')]
-    private ?Functionality $idFunctionality = null;
+    private ?Functionality $functionality = null;
 
     #[ORM\ManyToOne(targetEntity: Menu::class, inversedBy: 'children')]
     #[ORM\JoinColumn(name: "id_menu_parent", referencedColumnName: "id", onDelete: "SET NULL")]
@@ -47,26 +47,26 @@ class Menu
         return $this->id;
     }
 
-    public function getIdProfile(): ?profile
+    public function getProfile(): ?profile
     {
-        return $this->idProfile;
+        return $this->profile;
     }
 
-    public function setIdProfile(?profile $idProfile): static
+    public function setProfile(?profile $profile): static
     {
-        $this->idProfile = $idProfile;
+        $this->profile = $profile;
 
         return $this;
     }
 
-    public function getIdFunctionality(): ?functionality
+    public function getFunctionality(): ?functionality
     {
-        return $this->idFunctionality;
+        return $this->functionality;
     }
 
-    public function setIdFunctionality(?functionality $idFunctionality): static
+    public function setFunctionality(?functionality $functionality): static
     {
-        $this->idFunctionality = $idFunctionality;
+        $this->functionality = $functionality;
 
         return $this;
     }

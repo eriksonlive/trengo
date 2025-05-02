@@ -8,6 +8,7 @@ use App\Repository\FunctionalityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,7 +17,8 @@ class FunctionalityController extends AbstractController
     #[Route(path: '/config/functionality', name: 'config_functionality')]
     public function index(
         Request $request,
-        FunctionalityRepository $funcRepo
+        FunctionalityRepository $funcRepo,
+        RequestStack $rs
     ): Response {
         $params = array_filter(
             $request->attributes->all(),
@@ -24,12 +26,14 @@ class FunctionalityController extends AbstractController
             \ARRAY_FILTER_USE_KEY
         );
 
+        $profile_id = $rs->getCurrentRequest()->getSession()->get('profile_id');
+
         $itemPerPage = 5;
         $page = max(1, $request->attributes->get('page_func', 1));
         $offset = ($page - 1) * $itemPerPage;
-        $paginator   = $funcRepo->getFuncPaginator($offset, $itemPerPage, $request->query->all());
-        $totalCount  = count($paginator);
-        $totalPages  = (int) ceil($totalCount / $itemPerPage);
+        $paginator = $funcRepo->getFuncPaginator($offset, $itemPerPage, ['profile' => $profile_id]);
+        $totalCount = count($paginator);
+        $totalPages = (int) ceil($totalCount / $itemPerPage);
 
         $newFunc = new Functionality();
         $createForm = $this->createForm(CreateFunctionalityType::class, $newFunc, [
@@ -37,23 +41,26 @@ class FunctionalityController extends AbstractController
             'method' => 'POST',
         ]);
 
-        foreach ($paginator as $func) {
-            $editForms[$func->getId()] = $this->createForm(CreateFunctionalityType::class, $func, [
-                'action' => $this->generateUrl('edit_functionality', ['id' => $func->getId()]),
-                'method' => 'POST',
-            ])->createView();
-        }
+        if (!empty($paginator)) {
 
-        foreach ($paginator as $func) {
-            $deleteForms[$func->getId()] = $this->createFormBuilder(null, [
-                'csrf_protection' => true,
-                'csrf_field_name' => '_token',
-                'csrf_token_id'   => 'delete' . $func->getId(),
-            ])
-                ->setAction($this->generateUrl('delete_functionality', ['id' => $func->getId()]))
-                ->setMethod('POST')
-                ->getForm()
-                ->createView();
+            foreach ($paginator as $func) {
+                $editForms[$func->getId()] = $this->createForm(CreateFunctionalityType::class, $func, [
+                    'action' => $this->generateUrl('edit_functionality', ['id' => $func->getId()]),
+                    'method' => 'POST',
+                ])->createView();
+            }
+
+            foreach ($paginator as $func) {
+                $deleteForms[$func->getId()] = $this->createFormBuilder(null, [
+                    'csrf_protection' => true,
+                    'csrf_field_name' => '_token',
+                    'csrf_token_id'   => 'delete' . $func->getId(),
+                ])
+                    ->setAction($this->generateUrl('delete_functionality', ['id' => $func->getId()]))
+                    ->setMethod('POST')
+                    ->getForm()
+                    ->createView();
+            }
         }
 
         return $this->render('pages/config/functionality.html.twig', [
@@ -65,8 +72,9 @@ class FunctionalityController extends AbstractController
             'itemsPerPage'  => $itemPerPage,
             'params'        => $params,
             'createForm'    => $createForm->createView(),
-            'editForms'     => $editForms,
-            'deleteForms'   => $deleteForms,
+            'editForms'     => $editForms ?? [],
+            'deleteForms'   => $deleteForms ?? [],
+            'profile_id'    => $profile_id,
         ]);
     }
 

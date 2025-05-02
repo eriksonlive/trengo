@@ -18,7 +18,7 @@ class Profile
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(targetEntity: Menu::class, mappedBy: 'idProfile')]
+    #[ORM\OneToMany(targetEntity: Menu::class, mappedBy: 'profile')]
     private Collection $menus;
 
     public function __construct()
@@ -55,7 +55,7 @@ class Profile
     {
         if (!$this->menus->contains($menu)) {
             $this->menus->add($menu);
-            $menu->setIdProfile($this);
+            $menu->setProfile($this);
         }
 
         return $this;
@@ -65,8 +65,8 @@ class Profile
     {
         if ($this->menus->removeElement($menu)) {
             // set the owning side to null (unless already changed)
-            if ($menu->getIdProfile() === $this) {
-                $menu->setIdProfile(null);
+            if ($menu->getProfile() === $this) {
+                $menu->setProfile(null);
             }
         }
 

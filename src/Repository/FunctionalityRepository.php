@@ -24,11 +24,18 @@ class FunctionalityRepository extends ServiceEntityRepository
 
     public function getFuncPaginator(int $offset, int $limit, array $params = []): Paginator
     {
-        $sql = $this->createQueryBuilder('m');
+        $sql = $this->createQueryBuilder('f')
+            ->innerJoin('f.menus', 'm')
+            ->innerJoin('m.profile', 'p');
+
+        // if (isset($params['profile']) && $params['profile'] !== null) {
+        //     $sql->andWhere('p.id = :profile')
+        //         ->setParameter('profile', $params['profile']);
+        // }
 
         $query = $sql->setFirstResult($offset)
             ->setMaxResults($limit)
-            ->orderBy('m.id', 'ASC')
+            ->orderBy('f.id', 'ASC')
             ->getQuery();
 
         return new Paginator($query);
