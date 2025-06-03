@@ -2,7 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\TicketMessages;
+use App\Repository\TicketMessagesAttachmentsRepository;
+use App\Repository\TicketMessagesRepository;
 use App\Repository\TicketsRepository;
+use App\Services\MessagesTicketsServices;
+use App\Services\MessageViewServices;
 use App\Services\TicketsSyncService;
 use App\Services\TrengoServices;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,14 +17,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RoutesController extends AbstractController
 {
-
     private TrengoServices $trengoServices;
     private TicketsSyncService $ticketSync;
+    private MessagesTicketsServices $messagesTikets;
+    private MessageViewServices $messageView;
 
-    public function __construct(TrengoServices $trengoServices, TicketsSyncService $ticketSync)
+    public function __construct(TrengoServices $trengoServices, TicketsSyncService $ticketSync, MessagesTicketsServices $messagesTikets, MessageViewServices $messageView)
     {
+        $this->messagesTikets = $messagesTikets;
         $this->trengoServices = $trengoServices;
         $this->ticketSync = $ticketSync;
+        $this->messageView = $messageView;
     }
 
     #[Route('/tickets', name: 'tickets')]
@@ -31,7 +39,7 @@ class RoutesController extends AbstractController
         $page = max(1, $request->query->getInt('page', 1));
 
         // 1) Cuántos necesito para esta página
-        $needed = $itemsPerPage * $page;
+        $needed = $itemsPerPage * $page + 1;
 
         // 2) Cargo solo hasta esa cantidad
         $this->ticketSync->ensureLoaded($needed);
@@ -39,9 +47,11 @@ class RoutesController extends AbstractController
         // 3) Actualizo **solo** la página actual
         $this->ticketSync->syncPageUpdates($page);
 
+        $params = array_merge($request->query->all(), ['label' => 1782501]);
+
         // 4) Finalmente leo de la BD local
         $offset = ($page - 1) * $itemsPerPage;
-        $paginator = $ticketsRepo->getTicketsPaginator($offset, $itemsPerPage, $request->query->all());
+        $paginator = $ticketsRepo->getTicketsPaginator($offset, $itemsPerPage, $params);
 
         $totalCount = count($paginator);
         $totalPages = (int) ceil($totalCount / $itemsPerPage);
@@ -63,31 +73,56 @@ class RoutesController extends AbstractController
     }
 
     #[Route('/allmessage/{id}', name: 'all_messages')]
-    public function fetchTickets(Request $request)
+    public function fetchTickets(Request $request, TicketMessagesRepository $tmr)
     {
         $ticket_id = $request->attributes->get('id');
 
-        $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages');
+        $this->messagesTikets->ensureLoaded($ticket_id);
 
-        // dump($data['data']);
+        $messageRepo = $tmr->findBy(['ticket' => $ticket_id], ['id' => 'ASC']);
 
         return $this->render('/pages/trengo/allmessages.html.twig', [
-            'messages' => $data ? $data['data'] : [],
+            'messages' => $messageRepo,
         ]);
     }
 
-    #[Route('/message/{ticket_id}/{message_id}', name: 'message')]
-    public function fetchMessage(Request $request)
+    #[Route('/message/{message_id}', name: 'message')]
+    public function fetchMessage(Request $request, TicketMessagesRepository $ticketMessages)
     {
-        $ticket_id = $request->attributes->get('ticket_id'); // Obtener el ID del ticket desde la URL
-        $message_id = $request->attributes->get('message_id'); // Obtener el ID del ticket desde la URL
+        $message_id = $request->attributes->get('message_id');
 
-        $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages/' . $message_id);
+        $data = $ticketMessages->find($message_id);
 
-        // dump($data);
+        $grouped = [
+            'images' => [],
+            'videos' => [],
+            'audio' => [],
+            'documents' => [],
+            'others' => [],
+        ];
+
+        dump($data);
+
+        foreach ($data->getTicketMessagesAttachments() as $att) {
+            $ext = strtolower($att->getExtencion());
+            if (in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp'])) {
+                $grouped['images'][] = $att;
+            } elseif (in_array($ext, ['mp4', 'webm', 'wmp'])) {
+                $grouped['videos'][] = $att;
+            } elseif (in_array($ext, ['mp3', 'wav', 'aac', 'ogg'])) {
+                $grouped['audio'][] = $att;
+            } elseif (in_array($ext, ['pdf', 'docx', 'xml', 'xlsx'])) {
+                $grouped['documents'][] = $att;
+            } else {
+                $grouped['others'][] = $att;
+            }
+        }
+
+        dump($grouped);
 
         return $this->render('/pages/trengo/message.html.twig', [
             'message' => $data ? $data : [],
+            'attachments' => $grouped
         ]);
     }
 
@@ -96,7 +131,7 @@ class RoutesController extends AbstractController
     {
         $data = $this->trengoServices->request('/tickets/' . $ticket_id . '/messages');
 
-        // dump($data);
+        dump($data);
 
         return new JsonResponse($data);
     }

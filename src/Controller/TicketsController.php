@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Tickets;
+use App\Services\TicketsSyncService;
 use App\Services\TrengoServices;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Log\LoggerInterface;
@@ -16,7 +17,6 @@ use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
 class TicketsController extends AbstractController
 {
-
     private LoggerInterface $trengoLogger;
 
     public function __construct(LoggerInterface $trengoLogger)
@@ -30,7 +30,7 @@ class TicketsController extends AbstractController
         EntityManagerInterface $entityManager,
         TrengoServices $trengoServices
     ): JsonResponse {
-        $labels = 1645368;
+        $labels = 1779076; // rqpera 1645368, Pruebas 1779076
         $sort = '-date';
         $page = 1;
 
@@ -103,8 +103,8 @@ class TicketsController extends AbstractController
         );
     }
 
-    #[Route('/webhook/trengo', name: 'webhook_trengo', methods: ['POST', 'GET'])]
-    public function webhookTrengo(Request $request): Response
+    #[Route('/webhook/trengo', name: 'webhook_trengo', methods: ['POST'])]
+    public function webhookTrengo(Request $request, TicketsSyncService $ticketSync): Response
     {
         $content = $request->getContent();
         parse_str($content, $data);
@@ -130,6 +130,8 @@ class TicketsController extends AbstractController
         $this->trengoLogger->info('Webhook de Trengo recibido', [
             'data' => $data,
         ]);
+
+        $ticketSync->syncTicketUpdates($data);
 
         // TODO: guardar en base de datos
         return new Response('Webhook recibido', Response::HTTP_OK);

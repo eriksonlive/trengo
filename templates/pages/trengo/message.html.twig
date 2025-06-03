@@ -1,24 +1,66 @@
 {% extends 'base.html.twig' %}
 
+{% import 'components/attachment.twig' as macros %}
+
 {% block title %}
 	Messages
 {% endblock %}
 
 {% block body %}
-	<div class="m-4 p-4 relative overflow-x-auto shadow-md sm:rounded-lg">
-		<div>
-			<h1 class="text-2xl font-bold p-4">{{ message.contact.name }}</h1>
-			<span class="text-gray-500 text-sm p-4">
-				Creado: {{ message.created_at|date('d/m/Y H:i') }}
-			</span>
-			
-			<p class="text-gray-500 mt-4 p-4">
-				{% if message.body_type == 'IMAGE' %}
+	<div class="flex flex-row gap-4 m-4 p-4 relative overflow-x-auto shadow-md sm:rounded-lg">
+
+		<div class="w-[70%]">
+
+			<h1 class="text-2xl font-bold p-4">{{ message.contact }}</h1>
+			<div class="flex flex-col p-4">
+				<span class="text-gray-500 text-sm">
+					Creado:
+					{{ message.createdAt|date('d/m/Y H:i') }}
+				</span>
+
+				{% if message.isPhone %}
+					<span class="text-gray-500 text-sm">
+						Teléfono:
+						{{ message.phone }}
+					</span>
+				{% endif %}
+
+				{% if message.agentName %}
+					<span class="text-gray-500 text-sm">
+						Agente:
+						{{ message.agentName }}
+					</span>
+
+					<span class="text-gray-500 text-sm">
+						Correo Agente:
+						{{ message.agentEmail }}
+					</span>
+
+				{% endif %}
+
+			</div>
+
+			<p class="text-gray-500 mt-2 p-4">
+				{% if message.bodyType == 'IMAGE' %}
 					<img src="https://s3.eu-central-1.amazonaws.com/trengo/media/{{ message.file_name }}" alt="Imagen" class="w-full h-auto object-cover rounded-lg"/>
 				{% else %}
-					{{ message.message|split('@import')|first|trim }}
+					{# {% if message. message.emailMessage.html|length > 0 %}
+						{{ message.emailMessage.html|raw }}
+					{% else %} #}
+						{{ message.message|split('@import')|first|trim }}
+					{# {% endif %} #}
 				{% endif %}
 			</p>
-		</div>
+		</p>
 	</div>
-{% endblock %}
+	{% if attachments|length > 0 %}
+		<div class="w-[30%] p-4">
+			<h4 class="text-lg">Archivos adjuntos</h4>
+
+			<div class="m-2 p-2">
+				{{ macros.render_attachment(attachments) }}
+			</div>
+		</div>
+	{% endif %}
+
+</div>{% endblock %}

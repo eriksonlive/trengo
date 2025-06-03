@@ -3,14 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\TicketsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TicketsRepository::class)]
 class Tickets
 {
     #[ORM\Id]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Column(type: 'bigint')]
+    private ?string $id = null;
 
     #[ORM\Column(length: 255)]
     private ?string $status = null;
@@ -45,13 +47,21 @@ class Tickets
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $closedAt = null;
 
+    #[ORM\OneToMany(targetEntity: TicketMessages::class, mappedBy: 'ticket')]
+    private Collection $ticketMessages;
 
-    public function getId(): ?int
+    public function __construct()
+    {
+        $this->ticketMessages = new ArrayCollection();
+    }
+
+
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    public function setId(int $id): static
+    public function setId(string $id): static
     {
         $this->id = $id;
 
@@ -186,6 +196,36 @@ class Tickets
     public function setClosedAt(?\DateTimeImmutable $closedAt): static
     {
         $this->closedAt = $closedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, TicketMessages>
+     */
+    public function getTicketMessages(): Collection
+    {
+        return $this->ticketMessages;
+    }
+
+    public function addTicketMessage(TicketMessages $ticketMessage): static
+    {
+        if (!$this->ticketMessages->contains($ticketMessage)) {
+            $this->ticketMessages->add($ticketMessage);
+            $ticketMessage->setTicket($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTicketMessage(TicketMessages $ticketMessage): static
+    {
+        if ($this->ticketMessages->removeElement($ticketMessage)) {
+            // set the owning side to null (unless already changed)
+            if ($ticketMessage->getTicket() === $this) {
+                $ticketMessage->setTicket(null);
+            }
+        }
 
         return $this;
     }

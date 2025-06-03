@@ -24,7 +24,8 @@ class TicketsSyncService
     public function ensureLoaded(int $required): void
     {
         // $labels = 1259169; // omnisalud
-        $labels = 1645368; // reqpera
+        $labels = 1782501; // pruebas
+        // $labels = 1645368; // reqpera
         $sort = '-date';
 
         // 1. Siempre cargar la página 1 primero
@@ -139,5 +140,22 @@ class TicketsSyncService
         }
 
         $this->em->flush();
+    }
+
+    public function syncTicketUpdates(array $params)
+    {
+        if (isset($params['event_type']) && $params['event_type'] == 'TICKET_LABEL_ADDED' && strpos($params['label_name'], 'Estado')) {
+            $ticket = $this->ticketsRepo->find($params['ticket_id']);
+
+            if (!$ticket) {
+                return;
+            }
+
+            $ticket->setLabelName($params['label_name']);
+            $ticket->setIdLabel($params['label_id']);
+            $ticket->setUpdatedAt(new \DateTimeImmutable());
+
+            $this->em->flush();
+        }
     }
 }

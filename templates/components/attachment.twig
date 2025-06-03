@@ -1,0 +1,30 @@
+{% macro render_attachment(attachment) %}
+
+	{% if attachment.images|length > 0 %}
+		{% for img in attachment.images %}
+			<img src="{{ img.fullUrl }}" alt="{{ img.fileName }}">
+		{% endfor %}
+	{% elseif attachment.videos|length > 0 %}
+		{% for video in attachment.videos %}
+			<video controls>
+				<source src="{{ video.fullUrl }}" type="video/{{ video.extencion }}">
+				Tu navegador no soporta el video.
+			</video>
+		{% endfor %}
+	{% elseif attachment.audio|length > 0 %}
+		{% for audio in attachment.audio %}
+			<audio controls>
+				<source src="{{ audio.fullUrl }}" type="audio/{{ audio.extencion }}">
+				Tu navegador no soporta el audio.
+			</audio>
+		{% endfor %}
+	{% elseif attachment.documents|length > 0 %}
+		{% for document in attachment.documents %}
+			<a href="{{ document.fullUrl }}" target="_blank" alt="{{ document.fileName }}">{{document.fileName}}</a>
+		{% endfor %}
+	{% elseif attachment.others|length > 0 %}
+		{% for other in attachment.others %}
+			<a href="{{ other.fullUrl }}" target="_blank">Descargar{{ other.fileName }}</a>
+		{% endfor %}
+	{% endif %}
+{% endmacro %}

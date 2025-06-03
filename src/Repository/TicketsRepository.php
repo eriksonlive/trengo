@@ -26,6 +26,11 @@ class TicketsRepository extends ServiceEntityRepository
     {
         $sql = $this->createQueryBuilder('t');
 
+        if (isset($params['label']) && !empty($params['label'])) {
+            $sql->andWhere('t.idLabel = :label')
+                ->setParameter('label', $params['label']);
+        }
+
         if (isset($params['status']) && !empty($params['status'])) {
             $sql->andWhere('t.status = :status')
                 ->setParameter('status', $params['status']);

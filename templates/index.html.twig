@@ -151,17 +151,17 @@
 								<span class="sr-only">Icon description</span>
 							</button>
 							{# <button type="button" class="bg-amber-500 text-amber-100 border border-amber-100 hover:bg-amber-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-amber-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
-								<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-									<path stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
-								</svg>
-								<span class="sr-only">Icon description</span>
-							</button>
-							<button type="button" class="bg-red-500 text-red-100 border border-red-100 hover:bg-red-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
-								<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-									<path stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
-								</svg>
-								<span class="sr-only">Icon description</span>
-							</button> #}
+																						<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+																							<path stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+																						</svg>
+																						<span class="sr-only">Icon description</span>
+																					</button>
+																					<button type="button" class="bg-red-500 text-red-100 border border-red-100 hover:bg-red-600 hover:text-white focus:ring-2 focus:outline-none focus:ring-red-700 font-medium rounded-lg text-sm p-2 text-center inline-flex items-center me-2 dark:border-amber-500 dark:text-amber-500 dark:hover:text-white dark:focus:ring-amber-800 dark:hover:bg-amber-500">
+																						<svg class="w-[20px] h-[20px]" fill="none" stroke="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+																							<path stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+																						</svg>
+																						<span class="sr-only">Icon description</span>
+																					</button> #}
 						</td>
 					</tr>
 				{% else %}
@@ -241,4 +241,52 @@
 			</ul>
 		</nav>
 	</div>
+
+	<form action="{{ path('wompi_form') }}" method="post" class="flex p-4 justify-center">
+		<div class="w-[50%]">
+			<div class="grid grid-cols-2 gap-4 my-4">
+				<div>
+					<label for="customer-data:full-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre Empresa</label>
+					<input type="text" name="customer-data:full-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<div>
+					<label for="customer-data:legal-id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nit</label>
+					<input type="text" name="customer-data:legal-id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<div>
+					<label for="amount-in-cents" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monto a pagar</label>
+					<input type="text" name="amount-in-cents" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<div>
+					<label for="payment-method" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Referencia</label>
+					<input type="text" name="reference" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<div>
+					<label for="customer-data:email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+					<input type="text" name="customer-data:email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<div>
+					<label for="customer-data:phone-number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono</label>
+					<input type="text" name="customer-data:phone-number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<div>
+					<label for="customer-data:legal-id-type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de documento</label>
+					<input type="text" name="customer-data:legal-id-type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value=""/>
+				</div>
+
+				<input type="hidden" name="redirect-url" value="https://wompi.sgmsalud.com.co"/>
+				<input type="hidden" name="customer-data:phone-number-prefix" value="+57"/>
+				<input type="hidden" name="public-key" value="pub_test_9vPQp8WIihhWGhBoj8qwB6dqN03f2MYD"/>
+				<input type="hidden" name="currency" value="COP"/>
+			</div>
+			<button type="submit" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Pagar con Wompi</button>
+		</div>
+	</form>
+
 {% endblock %}

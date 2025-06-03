@@ -27,11 +27,22 @@ class _sidebarController extends AbstractController
     public function index(): Response
     {
         $session   = $this->rs->getCurrentRequest()->getSession();
-        $profile = $session->get('profile_id');
+        $profileId = $session->get('profile_id');
 
-        $profile = $this->profileRepo->find($profile);
+        if (!$profileId) {
+            $firstProfile = $this->profileRepo->findOneBy([], ['id' => 'ASC']);
+            $profileId = $firstProfile?->getId();
+        }
 
-        // $rootMenu = $this->menuRepo->findRootByProfile($profile);
+        if (!$profileId) {
+            return $this->render('layout/_sidebar.html.twig', [
+                'menus'        => [],
+                'menuChildren' => [],
+            ]);
+        }
+
+        $profile = $this->profileRepo->find($profileId);
+
         if (!$profile) {
             return $this->render('layout/_sidebar.html.twig', [
                 'menus'        => [],
@@ -55,8 +66,8 @@ class _sidebarController extends AbstractController
         unset($children);
 
         return $this->render('layout/_sidebar.html.twig', [
-            'menus'        => $allMenus ?? [],
-            'menuChildren' => $menuChildren ?? [],
+            'menus'        => $allMenus,
+            'menuChildren' => $menuChildren,
         ]);
     }
 }
